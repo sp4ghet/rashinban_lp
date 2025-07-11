@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RASHINBAN 2025 - GeoGuessr トーナメント</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="nav__container">
+          <div class="nav__brand">
+            <h1>RASHINBAN 2025</h1>
+          </div>
+          <ul class="nav__menu">
+            <li class="nav__item">
+              <a href="#event-info" class="nav__link">イベント情報</a>
+            </li>
+            <li class="nav__item">
+              <a href="#players" class="nav__link">選手登録</a>
+            </li>
+            <li class="nav__item">
+              <a href="#volunteers" class="nav__link">ボランティア</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">お問い合わせ</a>
+            </li>
+          </ul>
+          <button class="nav__toggle" id="nav-toggle">
+            <span class="nav__toggle-line"></span>
+            <span class="nav__toggle-line"></span>
+            <span class="nav__toggle-line"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <!-- Main Event Info Section -->
+      <section class="hero">
+        <div class="hero__container">
+          <img class="hero__image" src="./assets/images/hero.png" />
+        </div>
+      </section>
+
+      <!-- Event Info Section -->
+      <section id="event-info" class="event-info">
+        <div class="container">
+          <div class="event-info__content">
+            <h1 class="event-info__title">RASHINBAN 2025</h1>
+            <p class="event-info__subtitle">GeoGuessr日本最強決定戦</p>
+            <div class="event-info__details">
+              <div class="event-detail">
+                <span class="event-detail__label">形式</span>
+                <span class="event-detail__value">オンライン予選4回 + 決勝1回</span>
+              </div>
+              <div class="event-detail">
+                <span class="event-detail__label">決勝会場</span>
+                <span class="event-detail__value">RED° TOKYO TOWER</span>
+              </div>
+            </div>
+            
+            <div class="event-info__actions">
+              <button class="btn btn--primary">今すぐ登録</button>
+              <button class="btn btn--secondary">スケジュール確認</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Online Qualifiers Section -->
+      <section class="qualifiers">
+        <div class="container">
+          <h2 class="section__title">オンライン予選</h2>
+          <p class="qualifiers__description">
+            日本中どこからでも参加可能!4回のオンライン予選ラウンドで、RED° TOKYO TOWERでの決勝イベントへの進出者を決定します。
+          </p>
+          <div class="qualifiers__grid">
+            <div class="qualifier-item">
+              <div class="qualifier-item__number">01</div>
+              <div class="qualifier-item__title">予選 1</div>
+              <div class="qualifier-item__date">8月9日</div>
+              <div class="qualifier-item__status">登録受付中</div>
+            </div>
+            <div class="qualifier-item">
+              <div class="qualifier-item__number">02</div>
+              <div class="qualifier-item__title">予選 2</div>
+              <div class="qualifier-item__date">8月10日</div>
+              <div class="qualifier-item__status">登録受付中</div>
+            </div>
+            <div class="qualifier-item">
+              <div class="qualifier-item__number">03</div>
+              <div class="qualifier-item__title">予選 3</div>
+              <div class="qualifier-item__date">8月23日</div>
+              <div class="qualifier-item__status">登録受付中</div>
+            </div>
+            <div class="qualifier-item">
+              <div class="qualifier-item__number">04</div>
+              <div class="qualifier-item__title">予選 4</div>
+              <div class="qualifier-item__date">9月7日</div>
+              <div class="qualifier-item__status">登録受付中</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final Event Section -->
+      <section class="final-event">
+        <div class="container">
+          <div class="final-event__content">
+            <div class="final-event__info">
+              <h2 class="final-event__title">決勝トーナメント</h2>
+              <p class="final-event__description">
+                究極の対決！オンライン予選の上位進出者がRED° TOKYO TOWERでライブ競技を行い、チャンピオンタイトルと賞品をかけて戦います。
+              </p>
+              <div class="final-event__details">
+                <div class="final-detail">
+                  <div class="final-detail__icon">📅</div>
+                  <div class="final-detail__content">
+                    <div class="final-detail__label">日程</div>
+                    <div class="final-detail__value">2025年10月25日</div>
+                  </div>
+                </div>
+                <div class="final-detail">
+                  <div class="final-detail__icon">📍</div>
+                  <div class="final-detail__content">
+                    <div class="final-detail__label">会場</div>
+                    <div class="final-detail__value">RED° TOKYO TOWER</div>
+                  </div>
+                </div>
+                <div class="final-detail">
+                  <div class="final-detail__icon">🏆</div>
+                  <div class="final-detail__content">
+                    <div class="final-detail__label">フォーマット</div>
+                    <div class="final-detail__value">ベスト8 ダブルエリミネーショントーナメント</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="final-event__highlight">
+              <div class="final-event__trophy">🏆</div>
+              <h3 class="final-event__highlight-title">決勝トーナメント</h3>
+              <p class="final-event__highlight-text">日本最強は誰になるのか</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="players" class="players">
+        <div class="container">
+          <h2 class="section__title">選手登録</h2>
+          <div class="players__content">
+            <div class="players__info">
+              <h3>大会に参加しよう</h3>
+              <p>
+                日本最高のプレイヤーたちと地理知識を競い合いましょう。RASHINBAN 2025では、あらゆるスキルレベルのプレイヤーが今年最も権威あるGeoGuessrトーナメントに参加できます。
+              </p>
+
+              <div class="tournament-format">
+                <h4>トーナメント形式</h4>
+                <ul>
+                  <li>予選ラウンド: オンライン, 16人ダブルエリミネーション</li>
+                  <li>本戦: RED° TOKYO TOWERで開催</li>
+                  <li>8人ダブルエリミネーショントーナメント</li>
+                  <li><a href="">ルールブック</a></li>
+                </ul>
+              </div>
+
+              <!-- <div class="prizes">
+                <h4>賞品・特典</h4>
+                <ul>
+                  <li>チャンピオントロフィー・賞金</li>
+                  <li>公式RASHINBAN 2025グッズ</li>
+                  <li>GeoGuessrコミュニティでの認知</li>
+                  <li>トッププレイヤーとの交流</li>
+                </ul>
+              </div> -->
+            </div>
+
+            <div class="players__stats">
+              <div class="stat">
+                <h3 class="stat__number">16名</h3>
+                <p class="stat__label">各予選出場人数</p>
+              </div>
+              <!-- <div class="stat">
+                <h3 class="stat__number">全て</h3>
+                <p class="stat__label">スキルレベル</p>
+              </div> -->
+              <div class="stat">
+                <h3 class="stat__number">8名</h3>
+                <p class="stat__label">本戦出場人数</p>
+              </div>
+              <div class="stat">
+                <h3 class="stat__number">1人</h3>
+                <p class="stat__label">日本最強</p>
+              </div>
+              <div class="players__cta">
+                <button class="btn btn--primary btn--full">
+                  選手登録
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call for Volunteers Section -->
+      <section id="volunteers" class="volunteers">
+        <div class="container">
+          <h2 class="section__title">ボランティア募集</h2>
+          <div class="volunteers__content">
+            <p class="volunteers__description">
+              RASHINBAN 2025チームに参加して、この大会を忘れられないものにしませんか！イベント運営、技術サポート、受付、ライブ配信のお手伝いをしてくださる熱意あるボランティアを募集しています。イベント運営の経験がある方も、GeoGuessrに情熱を持っている方も、皆さんに活躍の場があります。ボランティアの方には貴重な経験、コミュニティとのつながり、限定トーナメントグッズをご提供します。
+            </p>
+            <div class="volunteers__cta">
+              <button class="btn btn--primary">ボランティア登録</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2 class="section__title">大会お問い合わせ</h2>
+          <div class="contact__content">
+            <div class="contact__details">
+              <div class="contact__item">
+                <strong>📧 メール：</strong> 
+                <a href="mailto:info@rashinban2025.com">info@rashinban2025.com</a>
+              </div>
+              <div class="contact__item">
+                <strong>💬 Discord：</strong> 
+                <a href="https://discord.gg/rashinban2025" target="_blank" rel="noopener noreferrer">RASHINBAN 2025 Discord サーバー</a>
+              </div>
+            </div>
+            <div class="contact__info">
+              <h3>RASHINBAN 2025についてご質問はありますか？</h3>
+              <p>
+                登録サポート、イベント詳細、パートナーシップの機会について、大会主催者までお気軽にお問い合わせください。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__brand">
+            <h3>RASHINBAN 2025</h3>
+            <p>GeoGuessr日本最強決定戦</p>
+          </div>
+          <div class="footer__social">
+            <h4>SNS各種</h4>
+            <ul>
+              <li><a href="#">Twitter/X</a></li>
+              <li><a href="#">Twitch</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2025 RASHINBAN Tournament. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
