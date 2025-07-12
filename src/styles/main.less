@@ -331,6 +331,62 @@ a {
   }
 }
 
+.news {
+  background-color: @bg-news;
+  padding: @spacing-4xl 0;
+
+  &__title {
+    text-align: left;
+    margin-bottom: 0;
+    position: relative;
+    line-height: @font-size-4xl * (124 / 180);
+    font-family: @font-family-heading;
+    color: @text-primary;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      font-size: @font-size-3xl;
+      line-height: @font-size-3xl;
+    }
+  }
+
+  &__separator {
+    display: block;
+    width: 172px;
+    height: 2px;
+    background-color: @text-primary;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      position: relative;
+      padding-left: @spacing-lg;
+      margin-bottom: @spacing-sm;
+      color: @text-primary;
+      font-size: @font-size-base;
+      font-family: @font-family-text;
+      font-weight: @font-weight-semibold;
+
+      @media (max-width: (@breakpoint-md - 1px)) {
+        font-size: @font-size-sm;
+      }
+
+      &:before {
+        content: "●";
+        position: absolute;
+        left: 0;
+        top: 4px;
+        color: @text-primary;
+        font-size: @font-size-sm;
+      }
+    }
+  }
+}
+
 // Qualifiers section
 .qualifiers {
   padding: @spacing-4xl 0;
@@ -346,8 +402,8 @@ a {
     color: @text-primary;
 
     @media (max-width: (@breakpoint-md - 1px)) {
-      font-size: @font-size-2xl;
-    line-height: @font-size-2xl * (124 / 180);
+      font-size: @font-size-3xl;
+      line-height: @font-size-3xl;
     }
   }
 
@@ -364,6 +420,7 @@ a {
     text-align: left;
     font-family: @font-family-text;
     font-size: @font-size-base;
+    font-weight: @font-weight-semibold;
     line-height: @font-size-base * (24 / 20);
     color: @text-primary;
     margin-bottom: @spacing-3xl;
@@ -429,6 +486,7 @@ a {
   &__status {
     font-family: @font-family-text;
     font-size: @font-size-sm;
+    font-weight: @font-weight-semibold;
     color: @text-primary;
     border-radius: 49px;
     border: 2px solid @text-primary;
@@ -464,8 +522,8 @@ a {
     color: @text-primary;
 
     @media (max-width: (@breakpoint-md - 1px)) {
-      font-size: @font-size-2xl;
-    line-height: @font-size-2xl * (124 / 180);
+      font-size: @font-size-3xl;
+      line-height: @font-size-3xl;
     }
   }
 
@@ -482,6 +540,7 @@ a {
     text-align: left;
     font-family: @font-family-text;
     font-size: @font-size-base;
+    font-weight: @font-weight-semibold;
     line-height: @font-size-base * (24 / 20);
     color: @text-primary;
     margin-bottom: @spacing-3xl;
@@ -560,8 +619,8 @@ a {
     color: @text-primary;
 
     @media (max-width: (@breakpoint-md - 1px)) {
-      font-size: @font-size-2xl;
-    line-height: @font-size-2xl * (124 / 180);
+      font-size: @font-size-3xl;
+      line-height: @font-size-3xl;
     }
   }
 
@@ -578,10 +637,11 @@ a {
     text-align: left;
     font-family: @font-family-text;
     font-size: @font-size-base;
+    font-weight: @font-weight-semibold;
     line-height: @font-size-base * (24 / 20);
     color: @text-primary;
     margin-bottom: @spacing-3xl;
-    max-width: 700px;
+    max-width: 1200px;
 
     @media (max-width: (@breakpoint-md - 1px)) {
       font-size: @font-size-sm;
@@ -623,6 +683,7 @@ a {
         color: @text-primary;
         font-size: @font-size-base;
         font-family: @font-family-text;
+        font-weight: @font-weight-semibold;
 
         @media (max-width: (@breakpoint-md - 1px)) {
           font-size: @font-size-sm;
@@ -632,6 +693,7 @@ a {
           content: "●";
           position: absolute;
           left: 0;
+          top: 2px;
           color: @text-primary;
           font-size: @font-size-sm;
         }
@@ -710,11 +772,11 @@ a {
     position: relative;
     line-height: @font-size-4xl * (124 / 180);
     font-family: @font-family-heading;
-    color: @text-primary;
+    color: @text-secondary;
 
     @media (max-width: (@breakpoint-md - 1px)) {
-      font-size: @font-size-2xl;
-      line-height: @font-size-2xl;
+      font-size: @font-size-3xl;
+      line-height: @font-size-3xl;
     }
   }
 
@@ -722,7 +784,7 @@ a {
     display: block;
     width: 172px;
     height: 2px;
-    background-color: @text-primary;
+    background-color: @text-secondary;
     margin-top: 30px;
     margin-bottom: 30px;
   }
@@ -731,10 +793,11 @@ a {
     text-align: left;
     font-family: @font-family-text;
     font-size: @font-size-base;
+    font-weight: @font-weight-semibold;
     line-height: @font-size-base * (24 / 20);
-    color: @text-primary;
+    color: @text-secondary;
     margin-bottom: @spacing-3xl;
-    max-width: 700px;
+    max-width: 1200px;
 
     @media (max-width: (@breakpoint-md - 1px)) {
       font-size: @font-size-sm;
@@ -789,6 +852,7 @@ a {
     .contact-description {
       color: @text-primary;
       font-family: @font-family-text;
+      font-weight: @font-weight-semibold;
       margin-bottom: 0;
     }
   }
@@ -826,6 +890,7 @@ a {
     p {
       color: @text-primary;
       font-family: @font-family-text;
+      font-weight: @font-weight-semibold;
       margin-bottom: 0;
     }
   }
