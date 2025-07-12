@@ -375,7 +375,7 @@ a {
   &__description {
     text-align: left;
     font-family: @font-family-text;
-    font-size: @font-size-lg;
+    font-size: @font-size-base;
     color: @text-primary;
     margin-bottom: @spacing-3xl;
     max-width: 700px;
@@ -431,7 +431,7 @@ a {
 
   &__status {
     font-family: @font-family-text;
-    font-size: @font-size-lg;
+    font-size: @font-size-base;
     color: @text-primary;
     border-radius: 49px;
     border: 2px solid @text-primary;
@@ -443,28 +443,8 @@ a {
 // Final Event section
 .final-event {
   padding: @spacing-4xl 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 215, 0, 0.1) 0%,
-    rgba(0, 0, 0, 1) 50%,
-    rgba(255, 215, 0, 0.1) 100%
-  );
+  background-color: @bg-finals;
   position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-      circle at center,
-      rgba(255, 215, 0, 0.05) 0%,
-      transparent 70%
-    );
-    pointer-events: none;
-  }
 
   &__content {
     display: grid;
@@ -479,120 +459,78 @@ a {
   }
 
   &__title {
+    text-align: left;
+    margin-bottom: 0;
+    position: relative;
+    line-height: 1;
     font-family: @font-family-heading;
-    color: @accent-color;
-    margin-bottom: @spacing-lg;
-    font-size: @font-size-4xl;
-    text-align: center;
+    color: @text-primary;
 
-    @media (min-width: @breakpoint-lg) {
-      text-align: left;
+    @media (max-width: (@breakpoint-md - 1px)) {
+      font-size: 64px;
     }
+  }
+
+  &__separator {
+      display: block;
+      width: 172px;
+      height: 2px;
+      background-color: @text-primary;
+      position: relative;
   }
 
   &__description {
-    font-size: @font-size-lg;
-    color: @text-secondary;
-    line-height: @line-height-relaxed;
+    text-align: left;
+    font-family: @font-family-text;
+    font-size: @font-size-base;
+    color: @text-primary;
     margin-bottom: @spacing-2xl;
-    text-align: center;
-
-    @media (min-width: @breakpoint-lg) {
-      text-align: left;
-    }
   }
 
   &__details {
-    display: grid;
-    gap: @spacing-lg;
-  }
-
-  &__highlight {
-    background: linear-gradient(
-      135deg,
-      rgba(255, 215, 0, 0.2) 0%,
-      rgba(255, 215, 0, 0.1) 100%
-    );
-    padding: @spacing-2xl;
-    border-radius: @border-radius-lg;
-    border: 2px solid @accent-color;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: conic-gradient(
-        from 0deg,
-        transparent,
-        rgba(255, 215, 0, 0.1),
-        transparent
-      );
-      animation: rotate 10s linear infinite;
-      pointer-events: none;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
   &__trophy {
-    font-size: @font-size-5xl;
-    margin-bottom: @spacing-lg;
-    position: relative;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-25%);
+    height: 90vh;
+    width: auto;
     z-index: 1;
+
+    @media (max-width: (@breakpoint-lg - 1px)) {
+      display: none;
+    }
   }
 
-  &__highlight-title {
-    font-family: @font-family-heading;
-    color: @accent-color;
-    margin-bottom: @spacing-md;
-    font-size: @font-size-2xl;
-    position: relative;
-    z-index: 1;
-  }
-
-  &__highlight-text {
-    color: @text-secondary;
-    margin-bottom: 0;
-    position: relative;
-    z-index: 1;
-  }
 }
 
 .final-detail {
   display: flex;
-  align-items: center;
-  gap: @spacing-lg;
-  padding: @spacing-lg;
-  background-color: rgba(255, 215, 0, 0.05);
-  border-radius: @border-radius-md;
-  border-left: 4px solid @accent-color;
+  flex-direction: column;
 
-  &__icon {
-    font-size: @font-size-2xl;
-    flex-shrink: 0;
-  }
-
-  &__content {
-    flex: 1;
-  }
+  align-items: left;
+  gap: 0;
+  padding: 0;
 
   &__label {
-    font-size: @font-size-sm;
+    font-size: @font-size-2xl;
     color: @text-primary;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: @spacing-xs;
+    margin-bottom: 0;
   }
 
   &__value {
     font-family: @font-family-heading;
     color: @text-primary;
-    font-size: @font-size-lg;
-    font-weight: @font-weight-bold;
+    font-size: @font-size-3xl;
+    font-weight: @font-weight-semibold;
+    line-height: 0.8;
   }
 }
 
