@@ -134,8 +134,18 @@ function cleanDist() {
     console.log('Cleaning dist directory...');
     
     if (fs.existsSync(config.distDir)) {
-        fs.rmSync(config.distDir, { recursive: true, force: true });
-        console.log('Dist directory cleaned');
+        // List of files/directories to delete
+        const itemsToDelete = ['index.html', 'css', 'assets', 'js'];
+        
+        itemsToDelete.forEach(item => {
+            const itemPath = path.join(config.distDir, item);
+            if (fs.existsSync(itemPath)) {
+                fs.rmSync(itemPath, { recursive: true, force: true });
+                console.log(`Deleted: ${item}`);
+            }
+        });
+        
+        console.log('Dist directory cleaned (selective)');
     }
     
     ensureDirectoryExists(config.distDir);
