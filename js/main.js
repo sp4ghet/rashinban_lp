@@ -49,7 +49,7 @@ function initSmoothScrolling() {
             
             if (targetSection) {
                 const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetSection.offsetTop - headerHeight - 20;
+                const targetPosition = targetSection.offsetTop - headerHeight;
                 
                 window.scrollTo({
                     top: targetPosition,
@@ -73,99 +73,4 @@ function initScrollEffects() {
             header.classList.remove('header--scrolled');
         }
     });
-    
-    // Animate elements on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements for animation
-    const animateElements = document.querySelectorAll('.stat');
-    animateElements.forEach(el => {
-        el.classList.add('animate-element');
-        observer.observe(el);
-    });
 }
-
-
-
-// Add some CSS for animations and notifications via JavaScript
-const style = document.createElement('style');
-style.textContent = `
-    /* Mobile navigation styles */
-    @media (max-width: 767px) {
-        .nav__menu {
-            position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background-color: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            transform: translateY(-100%);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav__menu--active {
-            transform: translateY(0);
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .nav__menu {
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .nav__toggle--active .nav__toggle-line:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        
-        .nav__toggle--active .nav__toggle-line:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .nav__toggle--active .nav__toggle-line:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-        
-        /* Mobile menu text colors when scrolled */
-        .header--scrolled .nav__menu {
-            background-color: rgba(255, 255, 255, 0.98);
-        }
-        
-        .header--scrolled .nav__link {
-            color: #333333;
-        }
-        
-        .header--scrolled .nav__link:hover {
-            color: #ff0000;
-        }
-    }
-    
-    /* Animation elements */
-    .animate-element {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease-out;
-    }
-    
-    .animate-element.animate-in {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-
-document.head.appendChild(style);
