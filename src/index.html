@@ -5,10 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RASHINBAN 2025 - GeoGuessr トーナメント</title>
-  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://use.typekit.net/sxv1pbn.css" />
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
@@ -55,7 +56,8 @@
     <!-- Online Qualifiers Section -->
     <section class="qualifiers" id="qualifiers">
       <div class="container">
-        <h2 class="section__title">ONLINE QUALIFIERS</h2>
+        <h2 class="qualifiers__title">ONLINE QUALIFIERS</h2>
+        <div class="qualifiers__separator"></div>
         <p class="qualifiers__description">
           日本中どこからでも参加可能な4回のオンライン予選ラウンドで、<br />
           RED° TOKYO TOWERでの決勝イベントへの進出者を決定します。
@@ -166,14 +168,20 @@
     <!-- Call for Volunteers Section -->
     <section id="volunteers" class="volunteers">
       <div class="container">
-        <h2 class="section__title">VOLUNTEER RECRUITMENT</h2>
         <div class="volunteers__content">
+          <h2 class="volunteers__title">VOLUNTEER RECRUITMENT</h2>
+          <div class="volunteers__separator"></div>
           <p class="volunteers__description">
             RASHINBAN
-            2025チームに参加して、この大会を忘れられないものにしませんか！イベント運営、技術サポート、受付、ライブ配信のお手伝いをしてくださる熱意あるボランティアを募集しています。イベント運営の経験がある方も、GeoGuessrに情熱を持っている方も、皆さんに活躍の場があります。ボランティアの方には貴重な経験、コミュニティとのつながり、限定トーナメントグッズをご提供します。
+            2025チームに参加して、この大会を忘れられないものにしませんか！
+            イベント運営、技術サポート、受付、ライブ配信のお手伝いをしてくださる熱意あるボランティアを募集しています。
+            イベント運営の経験がある方も、GeoGuessrに情熱を持っている方も、皆さんに活躍の場があります。
+            ボランティアの方には貴重な経験、コミュニティとのつながりをご提供します。
           </p>
           <div class="volunteers__cta">
-            <button class="btn btn--primary">ボランティア登録</button>
+            <button class="btn btn--primary">
+              <a>VOLUNTEER SIGNUP</a>
+            </button>
           </div>
         </div>
       </div>
@@ -183,37 +191,33 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__content">
-        <div class="contact__content">
-          <div class="contact__item">
-            <strong>📧 メール：</strong>
-            <a href="mailto:info@rashinban2025.com">info@rashinban2025.com</a>
-          </div>
-          <div class="contact__item">
-            <strong>💬 Discord：</strong>
-            <a href="https://discord.gg/rashinban2025" target="_blank" rel="noopener noreferrer">RASHINBAN 2025 Discord
-              サーバー</a>
-          </div>
-        </div>
-        <div class="contact__info">
-          <h3>RASHINBAN 2025についてご質問はありますか？</h3>
-          <p>
+        <img class="footer__logo" src="assets/images/logo-side.svg" />
+        <div class="footer__contact">
+          <p class="contact-description">
+            RASHINBAN 2025についてご質問はありますか？<br />
             登録サポート、イベント詳細、パートナーシップの機会について、大会主催者までお気軽にお問い合わせください。
           </p>
-        </div>
-        <div class="footer__brand">
-          <h3>RASHINBAN 2025</h3>
-          <p>GeoGuessr日本最強決定戦</p>
+          <div class="separator"></div>
+          <p class="contact-description">
+            <strong>E-Mail:</strong>
+            <a href="mailto:rashinban.geo@gmail.com">rashinban.geo@gmail.com</a>
+            <br/>
+            <strong>Discord:</strong>
+            <a href="https://discord.gg/8mM5FzeQwu" target="_blank" rel="noreferrer">世界マップ鯖</a>
+          </p>
         </div>
         <div class="footer__social">
-          <h4>SNS各種</h4>
           <ul>
-            <li><a href="#">Twitter/X</a></li>
-            <li><a href="#">Twitch</a></li>
+            <li><a href="https://x.com/rashinban_geo"><i class="bi bi-twitter"></i></a></li>
+            <li><a href="https://twitch.tv/sp4geo"><i class="bi bi-twitch"></i></a></li>
           </ul>
         </div>
       </div>
       <div class="footer__bottom">
         <p>&copy; 2025 RASHINBAN Tournament. All rights reserved.</p>
+      </div>
+      <div class="footer__bottom-logo">
+        <img src="assets/images/compass-footer.svg" />
       </div>
     </div>
   </footer>
