@@ -73,47 +73,4 @@ function initScrollEffects() {
             header.classList.remove('header--scrolled');
         }
     });
-    
-    // Animate elements on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements for animation
-    const animateElements = document.querySelectorAll('.stat');
-    animateElements.forEach(el => {
-        el.classList.add('animate-element');
-        observer.observe(el);
-    });
 }
-
-
-
-// Add some CSS for animations and notifications via JavaScript
-const style = document.createElement('style');
-style.textContent = `
-    /* Mobile navigation styles */
-    
-    /* Animation elements */
-    .animate-element {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease-out;
-    }
-    
-    .animate-element.animate-in {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-
-document.head.appendChild(style);

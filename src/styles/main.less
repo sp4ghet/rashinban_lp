@@ -80,12 +80,12 @@ p {
 }
 
 a {
-  color: @primary-color;
-  text-decoration: none;
+  color: @text-primary;
+  text-decoration: underline;
   transition: color @transition-fast;
 
   &:hover {
-    color: @primary-dark;
+    color: @text-dark;
   }
 }
 
@@ -96,24 +96,12 @@ a {
   justify-content: center;
   padding: @spacing-sm @spacing-lg;
   font-size: @font-size-base;
-  font-weight: @font-weight-medium;
+  font-weight: @font-weight-bold;
   border: 2px solid transparent;
-  border-radius: @border-radius-md;
+  border-radius: @border-radius-lg;
   cursor: pointer;
   transition: all @transition-fast;
   text-decoration: none;
-
-  &--primary {
-    background-color: @primary-color;
-    color: @text-primary;
-    border-color: @primary-color;
-
-    &:hover {
-      background-color: @primary-dark;
-      border-color: @primary-dark;
-      color: @text-primary;
-    }
-  }
 
   &--secondary {
     background-color: transparent;
@@ -124,10 +112,6 @@ a {
       background-color: @primary-color;
       color: @text-primary;
     }
-  }
-
-  &--full {
-    width: 100%;
   }
 
   @media (min-width: @breakpoint-md) {
@@ -167,6 +151,7 @@ a {
 
     .nav__link {
       color: @secondary-color;
+      text-decoration: none;
 
       &:hover {
         color: @primary-color;
@@ -194,7 +179,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 70px;
+    height: 72px;
 
     @media (min-width: @breakpoint-sm) {
       padding: 0 @spacing-lg;
@@ -255,6 +240,7 @@ a {
     font-weight: @font-weight-bold;
     color: @text-primary;
     transition: color @transition-fast;
+    text-decoration: none;
 
     &:hover {
       color: @primary-dark;
@@ -379,6 +365,10 @@ a {
     color: @text-primary;
     margin-bottom: @spacing-3xl;
     max-width: 700px;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      font-size: @font-size-xs;
+    }
   }
 
   &__grid {
@@ -413,12 +403,12 @@ a {
   // padding: @spacing-xl;
   text-align: left;
   position: relative;
-  line-height: 1;
+  line-height: 0.9;
 
   &__title {
     font-family: @font-family-heading;
     font-weight: @font-weight-bold;
-    font-size: @font-size-xl;
+    font-size: @font-size-lg;
     color: @text-primary;
     text-transform: uppercase;
   }
@@ -431,11 +421,11 @@ a {
 
   &__status {
     font-family: @font-family-text;
-    font-size: @font-size-base;
+    font-size: @font-size-sm;
     color: @text-primary;
     border-radius: 49px;
     border: 2px solid @text-primary;
-    padding: 8px;
+    padding: 8px 16px;
     display: inline-block;
   }
 }
@@ -472,11 +462,11 @@ a {
   }
 
   &__separator {
-      display: block;
-      width: 172px;
-      height: 2px;
-      background-color: @text-primary;
-      position: relative;
+    display: block;
+    width: 172px;
+    height: 2px;
+    background-color: @text-primary;
+    position: relative;
   }
 
   &__description {
@@ -485,6 +475,10 @@ a {
     font-size: @font-size-base;
     color: @text-primary;
     margin-bottom: @spacing-2xl;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      font-size: @font-size-sm;
+    }
   }
 
   &__details {
@@ -506,7 +500,6 @@ a {
       display: none;
     }
   }
-
 }
 
 .final-detail {
@@ -534,63 +527,44 @@ a {
   }
 }
 
-// Contact section
-.contact {
-  padding: @spacing-4xl 0;
-
-  &__content {
-    display: grid;
-    gap: @spacing-3xl;
-    align-items: start;
-
-    @media (min-width: @breakpoint-lg) {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  &__details {
-    display: flex;
-    flex-direction: column;
-    gap: @spacing-lg;
-  }
-
-  &__item {
-    color: @text-secondary;
-    font-size: @font-size-lg;
-
-    strong {
-      color: @text-primary;
-    }
-
-    a {
-      color: @primary-color;
-      text-decoration: none;
-      transition: color @transition-fast;
-
-      &:hover {
-        color: @primary-dark;
-        text-decoration: underline;
-      }
-    }
-  }
-
-  &__info {
-    h3 {
-      color: @text-primary;
-      margin-bottom: @spacing-lg;
-    }
-
-    p {
-      font-size: @font-size-lg;
-      margin-bottom: 0;
-    }
-  }
-}
-
 // Players section
 .players {
   padding: @spacing-4xl 0;
   background-color: @bg-registration;
+
+  &__title {
+    text-align: left;
+    margin-bottom: 0;
+    position: relative;
+    line-height: 1;
+    font-family: @font-family-heading;
+    color: @text-primary;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      font-size: 64px;
+    }
+  }
+
+  &__separator {
+    display: block;
+    width: 172px;
+    height: 2px;
+    background-color: @text-primary;
+    position: relative;
+  }
+
+  &__description {
+    text-align: left;
+    font-family: @font-family-text;
+    font-size: @font-size-base;
+    color: @text-primary;
+    margin-bottom: @spacing-3xl;
+    max-width: 1200px;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      font-size: @font-size-sm;
+    }
+  }
 
   &__content {
     display: grid;
@@ -602,61 +576,97 @@ a {
     }
   }
 
-  &__info {
-    h3 {
-      font-family: @font-family-heading;
+  .tournament-format {
+    margin-bottom: @spacing-xl;
+
+    h4 {
+      font-family: @font-family-text;
       color: @text-primary;
-      margin-bottom: @spacing-lg;
+      margin-bottom: @spacing-md;
+      font-size: @font-size-base;
+
+      @media (max-width: (@breakpoint-md - 1px)) {
+        font-size: @font-size-sm;
+      }
     }
 
-    p {
-      font-size: @font-size-lg;
-      line-height: @line-height-relaxed;
-      margin-bottom: @spacing-xl;
+    ul {
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        position: relative;
+        padding-left: @spacing-lg;
+        margin-bottom: @spacing-sm;
+        color: @text-primary;
+        font-size: @font-size-base;
+
+        @media (max-width: (@breakpoint-md - 1px)) {
+          font-size: @font-size-sm;
+        }
+
+        &:before {
+          content: "●";
+          position: absolute;
+          left: 0;
+          color: @text-primary;
+          font-size: @font-size-sm;
+        }
+      }
     }
   }
 
   &__stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: @spacing-lg;
-    text-align: center;
+    display: flex;
+    text-align: left;
     margin-bottom: @spacing-xl;
+
+    @media (min-width: @breakpoint-md) {
+      justify-content: space-between;
+      flex-direction: row;
+      max-width: 1000px;
+    }
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      flex-direction: column;
+      max-height: 60vh;
+      justify-content: space-between;
+    }
+
+    .stat {
+      &__label {
+        color: @text-primary;
+        font-size: @font-size-lg;
+        font-weight: @font-weight-semibold;
+        margin-bottom: 0;
+      }
+
+      &__number {
+        color: @text-primary;
+        font-size: @font-size-3xl;
+        font-weight: @font-weight-semibold;
+        margin-bottom: 0;
+        line-height: 0.8;
+      }
+    }
   }
 
   &__cta {
-    text-align: center;
-  }
-}
+    text-align: left;
 
-.tournament-format,
-.prizes {
-  margin-bottom: @spacing-xl;
+    .btn {
+      width: 400px;
 
-  h4 {
-    font-family: @font-family-heading;
-    color: @primary-color;
-    margin-bottom: @spacing-md;
-    font-size: @font-size-lg;
-  }
-
-  ul {
-    list-style: none;
-    padding-left: 0;
-
-    li {
-      position: relative;
-      padding-left: @spacing-lg;
-      margin-bottom: @spacing-sm;
-      color: @text-secondary;
-
-      &:before {
-        content: "▶";
-        position: absolute;
-        left: 0;
-        color: @primary-color;
-        font-size: @font-size-sm;
+      @media (max-width: (@breakpoint-md - 1px)) {
+        width: 80vw;
       }
+    }
+
+    a {
+      text-decoration: none;
+      color: @bg-registration;
+      font-family: @font-family-heading;
+      font-weight: @font-weight-bold;
     }
   }
 }
@@ -678,20 +688,14 @@ a {
     color: @text-secondary;
     line-height: @line-height-relaxed;
     margin-bottom: @spacing-2xl;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      font-size: @font-size-sm;
+    }
   }
 
   &__cta {
     text-align: center;
-  }
-}
-
-// Animation for final event highlight
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 
