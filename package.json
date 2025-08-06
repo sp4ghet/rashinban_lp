@@ -1,17 +1,19 @@
 {
   "name": "rashinban_lp",
-  "version": "1.0.0",
-  "description": "Simple static webpage with HTML/LESS/JS",
-  "main": "dist/index.html",
+  "private": true,
+  "version": "0.0.0",
+  "source": [
+    "src/index.html",
+    "src/**.html"
+  ],
   "scripts": {
-    "build": "node build-tools/compile.js",
-    "serve": "http-server dist -p 8080 -o",
-    "dev": "npm run build && npm run serve"
-  },
-  "dependencies": {
-    "http-server": "^14.1.1"
+    "start": "parcel",
+    "build": "parcel build"
   },
   "devDependencies": {
-    "less": "^4.2.0"
+    "@parcel/transformer-less": "^2.15.4",
+    "less": "^4.2.0",
+    "parcel": "^2.14.0",
+    "parcel-transformer-markdown": "^3.0.1"
   }
 }
