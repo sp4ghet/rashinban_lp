@@ -12,8 +12,11 @@
   },
   "devDependencies": {
     "@parcel/transformer-less": "^2.15.4",
+    "@parcel/transformer-posthtml": "^2.15.4",
     "less": "^4.2.0",
     "parcel": "^2.14.0",
-    "parcel-transformer-markdown": "^3.0.1"
+    "parcel-transformer-markdown": "^3.0.1",
+    "posthtml": "^0.16.6",
+    "posthtml-include": "^1.7.4"
   }
 }

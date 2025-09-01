@@ -1,0 +1,50 @@
+// Live stream section
+.live {
+  background-color: #000;
+  color: #fff;
+  padding: @spacing-4xl 0;
+
+  &__title {
+    text-align: center;
+    color: #fff;
+    font-size: @font-size-lg;
+    margin-bottom: 1em;
+    letter-spacing: 0.08em;
+  }
+
+  &__player {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__placeholder {
+    position: relative;
+    width: 80%;
+    max-width: 960px;
+    background: #111;
+    border: 2px dashed #444;
+    border-radius: @border-radius-lg;
+    color: #bbb;
+    text-align: center;
+    margin: 0 auto;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 56.25%; // 16:9 ratio
+    }
+
+    p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      padding: @spacing-lg;
+      font-size: @font-size-2xl;
+      @media (min-width: @breakpoint-md) {
+        font-size: @font-size-3xl;
+      }
+    }
+  }
+}
