@@ -2,7 +2,7 @@
 .sponsor {
   background-color: #000;
   color: #fff;
-  padding: @spacing-4xl 0;
+  padding: @spacing-3xl 0;
 
   &__title {
     text-align: center;
@@ -15,35 +15,53 @@
   &__body {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
-  &__placeholder {
-    position: relative;
+  /* Rows per sponsor level */
+  &__rows {
+    display: flex;
+    flex-direction: column;
+    gap: @spacing-xl;
     width: 100%;
-    max-width: 960px;
-    background: #111;
-    border: 2px dashed #444;
-    border-radius: @border-radius-lg;
-    color: #bbb;
-    text-align: center;
+  }
 
-    &::before {
-      content: '';
-      display: block;
-      padding-top: 56.25%; // 16:9 ratio
-    }
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: @spacing-lg;
+    justify-content: center;
+    align-items: center;
+  }
 
-    p {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      margin: 0;
-      padding: @spacing-lg;
-      font-size: @font-size-xs;
-      @media (min-width: @breakpoint-md) {
-        font-size: @font-size-xl;
-      }
-    }
+  /* Logo link wrapper */
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: @spacing-sm @spacing-md;
+    background: transparent;
+    text-decoration: none;
+  }
+
+  /* Logo sizes */
+  &__logo {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    filter: none;
+  }
+
+  &__logo--lg {
+    max-height: 96px;
+  }
+
+  &__logo--md {
+    max-height: 72px;
+  }
+
+  &__logo--sm {
+    max-height: 48px;
   }
 }
