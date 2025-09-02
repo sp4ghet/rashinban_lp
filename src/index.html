@@ -99,6 +99,17 @@
 
   <include src="./sections/footer.html"></include>
 
+  <!-- Ticket popup: always visible on right, closable -->
+  <div class="ticket-popup" role="dialog" aria-label="チケット情報">
+    <button class="ticket-popup__close" type="button" aria-label="閉じる">
+      <i class="bi bi-x-lg" aria-hidden="true"></i>
+    </button>
+    <a class="ticket-popup__content" href="#tickets" aria-label="チケット購入ページへ">
+      <span class="ticket-popup__title">チケット好評発売中!!!</span>
+      <span class="ticket-popup__subtitle">ご購入はこちら</span>
+    </a>
+  </div>
+
   <script src="scripts/main.js"></script>
 </body>
 

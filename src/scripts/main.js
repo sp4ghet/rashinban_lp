@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
     initScrollEffects();
     initLiveToggle();
+    initTicketPopup();
 });
 
 // Navigation functionality
@@ -85,6 +86,25 @@ function initScrollEffects() {
     });
 }
 
+// Ticket popup close
+function initTicketPopup() {
+    const popup = document.querySelector('.ticket-popup');
+    if (!popup) return;
+    const closeBtn = popup.querySelector('.ticket-popup__close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            popup.classList.add('ticket-popup--hidden');
+        });
+    }
+
+    // Remove from DOM after fade-out to avoid tab stops
+    popup.addEventListener('transitionend', (ev) => {
+        if (ev.propertyName === 'opacity' && popup.classList.contains('ticket-popup--hidden')) {
+            popup.style.display = 'none';
+        }
+    });
+}
 // Live player toggle (YouTube/Twitch)
 function initLiveToggle() {
     const tabs = document.querySelectorAll('.live__tab');
