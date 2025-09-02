@@ -137,39 +137,16 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  background-color: @bg-primary;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid @border-color;
+  background-color: transparent; // transparent nav bar
+  backdrop-filter: none;
+  border-bottom: none;
   z-index: @z-fixed;
   transition: all @transition-normal;
 
   &--scrolled {
-    background-color: @bg-secondary;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-bottom-color: rgba(0, 0, 0, 0.1);
-    color: @secondary-color;
-
-    .nav__brand h1 {
-      color: @primary-color;
-    }
-
-    .nav__link {
-      color: @secondary-color;
-      text-decoration: none;
-
-      &:hover {
-        color: @primary-color;
-      }
-    }
-
-    .nav__menu {
-      background-color: @bg-secondary;
-      transition: all @transition-normal;
-    }
-
-    .nav__toggle-line {
-      background-color: @secondary-color;
-    }
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom-color: transparent;
   }
 }
 
@@ -178,12 +155,12 @@ a {
 
   &__container {
     max-width: @container-max-width;
-    margin: 0 auto;
+    margin: 24px auto;
     padding: 0 @container-padding;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 72px;
+    text-align: right;
 
     @media (min-width: @breakpoint-sm) {
       padding: 0 @spacing-lg;
@@ -205,38 +182,37 @@ a {
   }
 
   &__menu {
-    display: none;
+    // Right-side drawer menu (all sizes)
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 80vw;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
     list-style: none;
     gap: @spacing-xl;
-    background-color: @bg-primary;
-    transition: all @transition-normal;
+    padding: 72px @spacing-xl @spacing-xl; // account for header height
+    background-color: @bg-primary; // red drawer
+    transform: translateX(100%);
+    transition: transform @transition-normal, opacity @transition-normal, visibility @transition-normal;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: @z-fixed;
 
-    @media (max-width: (@breakpoint-md - 1px)) {
-      position: fixed;
-      top: 70px;
-      left: 0;
-      right: 0;
-      backdrop-filter: blur(10px);
-      padding: @spacing-xl;
-      transform: translateY(-100%);
-      opacity: 0;
-      visibility: hidden;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      flex-direction: column;
-      gap: @spacing-xl;
-      z-index: @z-fixed;
-
-      &--active {
-        display: flex;
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
+    &--active {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
     }
+  }
 
-    @media (min-width: @breakpoint-md) {
-      display: flex;
-    }
+  &__item--close {
+    display: flex;
+    justify-content: flex-end;
   }
 
   &__link {
@@ -251,39 +227,44 @@ a {
     }
   }
 
+  &__close {
+    background: none;
+    border: none;
+    color: @text-primary;
+    padding: @spacing-sm;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: @border-radius-md;
+
+    i {
+      font-size: 2.6rem;
+      line-height: 2;
+    }
+
+    &:hover { opacity: 0.85; }
+    &:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  }
+
   &__toggle {
-    display: flex;
+    display: flex; // always visible (top-right)
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
     background: none;
     border: none;
     cursor: pointer;
     padding: @spacing-sm;
-
-    @media (min-width: @breakpoint-md) {
-      display: none;
-    }
+    font-weight: bolder;
   }
 
   &__toggle-line {
-    width: 24px;
-    height: 2px;
+    width: 35px;
+    height: 5px;
     background-color: @text-primary;
     transition: all @transition-fast;
-  }
-
-  &__toggle--active {
-    .nav__toggle-line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 4px);
-    }
-
-    .nav__toggle-line:nth-child(2) {
-      opacity: 0;
-    }
-
-    .nav__toggle-line:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -4px);
-    }
   }
 }
 

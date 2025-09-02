@@ -18,6 +18,15 @@ function initNavigation() {
             navToggle.classList.toggle('nav__toggle--active');
         });
 
+        // Close button inside the drawer
+        const navClose = document.querySelector('.nav__close');
+        if (navClose) {
+            navClose.addEventListener('click', function() {
+                navMenu.classList.remove('nav__menu--active');
+                navToggle.classList.remove('nav__toggle--active');
+            });
+        }
+
         // Close mobile menu when clicking on a link
         const navLinks = document.querySelectorAll('.nav__link');
         navLinks.forEach(link => {
