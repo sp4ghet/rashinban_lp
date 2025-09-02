@@ -12,9 +12,74 @@
     letter-spacing: 0.08em;
   }
 
-  &__player {
+  /* Tabs */
+  &__tabs {
     display: flex;
     justify-content: center;
+    gap: @spacing-md;
+    margin-bottom: @spacing-lg;
+  }
+
+  &__tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    color: #fff;
+    border: none;
+    border-radius: @border-radius-md;
+    cursor: pointer;
+    transition: opacity @transition-fast, transform @transition-fast;
+    opacity: 0.7;
+
+    i { font-size: 50px; line-height: 1; }
+
+    &:hover { opacity: 0.9; transform: translateY(-1px); }
+    &.is-active { opacity: 1; }
+    &:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  }
+
+  /* Stage */
+  &__stage {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* 16:9 embed wrapper */
+  .embed-16x9 {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    padding-top: 0;
+
+    iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  /* Panes */
+  &__pane {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+  }
+  &__pane.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   &__placeholder {

@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
     initSmoothScrolling();
     initScrollEffects();
+    initLiveToggle();
 });
 
 // Navigation functionality
@@ -72,5 +73,33 @@ function initScrollEffects() {
         } else {
             header.classList.remove('header--scrolled');
         }
+    });
+}
+
+// Live player toggle (YouTube/Twitch)
+function initLiveToggle() {
+    const tabs = document.querySelectorAll('.live__tab');
+    const panes = document.querySelectorAll('.live__pane');
+    if (!tabs.length || !panes.length) return;
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = tab.getAttribute('data-target');
+            if (!target) return;
+
+            // update tab active state
+            tabs.forEach(t => {
+                const isActive = t === tab;
+                t.classList.toggle('is-active', isActive);
+                t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+
+            // update panes
+            panes.forEach(pane => {
+                const isMatch = pane.getAttribute('data-pane') === target;
+                pane.classList.toggle('is-active', isMatch);
+                pane.setAttribute('aria-hidden', isMatch ? 'false' : 'true');
+            });
+        });
     });
 }
