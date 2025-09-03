@@ -192,7 +192,7 @@ a {
     display: flex;
     flex-direction: column;
     list-style: none;
-    gap: @spacing-xl;
+    gap: @spacing-lg;
     padding: 72px @spacing-xl @spacing-xl; // account for header height
     background-color: @bg-primary; // red drawer
     transform: translateX(100%);
@@ -289,7 +289,7 @@ a {
   display: flex;
   align-items: center;
   gap: @spacing-md;
-  min-width: 220px;
+  min-width: 339px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 
   &__content {
@@ -626,8 +626,8 @@ a {
 
   &__trophy {
     position: absolute;
-    right: 0;
-    top: 50%;
+    right: 0px;
+    top: 90%;
     transform: translateY(-25%);
     width: 40vw;
     z-index: 1;
@@ -671,10 +671,12 @@ a {
   }
 }
 
-// Players section
-.players {
+
+// abouts section
+.abouts {
   padding: @spacing-4xl 0;
-  background-color: @bg-registration;
+  background-color: @bg-primary;
+  position: relative;
 
   &__title {
     text-align: left;
@@ -707,7 +709,265 @@ a {
     line-height: @font-size-base * (24 / 20);
     color: @text-primary;
     margin-bottom: @spacing-3xl;
+    max-width: 70%;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      font-size: @font-size-sm;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: @spacing-lg;
+    position: relative;
+    z-index: 2;
+  }
+
+  .abouts__btn {
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    background: transparent;
+    padding: @spacing-xs @spacing-md; // narrower, shorter
+    border-radius: 999px; // more rounded corners
+    font-weight: @font-weight-medium; // a bit bolder
+    line-height: 1.2; // slightly taller text
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 203px;
+    height: 56px;
+    box-sizing: border-box; // include border in fixed size
+
+    &:hover {
+      background: #fff;
+      color: @bg-primary;
+      text-decoration: none;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    gap: 20px;
     max-width: 1200px;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+    }
+  }
+
+  img.about__compass {
+    position: absolute;
+    right: 0;
+    top: 75%;
+    transform: translateY(-40%);
+    width: 40vw;
+    z-index: 1;
+
+    @media (min-width: @breakpoint-lg) and (max-width: (@breakpoint-xl - 1px)) {
+      width: 30vw;
+    }
+
+    @media (max-width: (@breakpoint-lg - 1px)) {
+      display: none;
+    }
+  }
+}
+
+.about-item {
+  background-color: @bg-primary;
+  // padding: @spacing-xl;
+  text-align: left;
+  position: relative;
+  line-height: 0.9;
+
+  &__title {
+    font-family: @font-family-heading;
+    font-weight: @font-weight-bold;
+    font-size: @font-size-lg;
+    color: @text-primary;
+    text-transform: uppercase;
+  }
+
+  &__date {
+    color: @text-primary;
+    font-size: @font-size-3xl;
+    font-weight: @font-weight-bold;
+    letter-spacing: 0.02em;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      font-size: @font-size-2xl;
+    }
+  }
+
+  &__status {
+    font-family: @font-family-text;
+    font-size: @font-size-sm;
+    font-weight: @font-weight-semibold;
+    color: @text-primary;
+    border-radius: 49px;
+    border: 2px solid @text-primary;
+    padding: 8px 16px;
+    display: inline-block;
+  }
+}
+
+// Final Event section
+.final-event {
+  padding: @spacing-4xl 0;
+  background-color: @bg-finals;
+  position: relative;
+
+  &__content {
+    display: grid;
+    gap: @spacing-3xl;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: @breakpoint-lg) {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  &__title {
+    text-align: left;
+    margin-bottom: 0;
+    position: relative;
+    line-height: @font-size-4xl * (124 / 180);
+    font-family: @font-family-heading;
+    color: @text-primary;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      font-size: @font-size-3xl;
+      line-height: @font-size-3xl;
+    }
+  }
+
+  &__separator {
+    display: block;
+    width: 172px;
+    height: 2px;
+    background-color: @text-primary;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__description {
+    text-align: left;
+    font-family: @font-family-text;
+    font-size: @font-size-xl;
+    font-weight: @font-weight-semibold;
+    line-height: @font-size-base * (24 / 20);
+    color: @text-primary;
+    margin-bottom: @spacing-3xl;
+    max-width: 1200px;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      font-size: @font-size-sm;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  &__trophy {
+    position: absolute;
+    right: -7%;
+    top: 85%;
+    transform: translateY(-25%);
+    width: 40vw;
+    z-index: 1;
+
+    @media (max-width: (@breakpoint-lg - 1px)) {
+      display: none;
+    }
+  }
+}
+
+.final-detail {
+  display: flex;
+  flex-direction: column;
+
+  align-items: left;
+  gap: 0;
+  padding: 0;
+
+  &__label {
+    font-size: @font-size-2xl;
+    color: @text-primary;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      font-size: @font-size-xl;
+    }
+  }
+
+  &__value {
+    font-family: @font-family-heading;
+    color: @text-primary;
+    font-size: @font-size-3xl;
+    font-weight: @font-weight-semibold;
+    line-height: 0.8;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      font-size: @font-size-2xl;
+    }
+  }
+}
+
+
+// Players section
+.players {
+  padding: @spacing-4xl 0;
+  background-color: @bg-registration;
+
+  // Expand section container to full width so left column can reach ~80vw
+  .container {
+    max-width: 100%;
+  }
+
+  &__title {
+    text-align: left;
+    margin-bottom: 0;
+    position: relative;
+    line-height: @font-size-4xl * (124 / 180);
+    font-family: @font-family-heading;
+    color: @text-primary;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      font-size: @font-size-3xl;
+      line-height: @font-size-3xl;
+    }
+  }
+
+  &__separator {
+    display: block;
+    width: 172px;
+    height: 2px;
+    background-color: @text-primary;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__description {
+    text-align: left;
+    font-family: @font-family-text;
+    font-size: @font-size-base;
+    font-weight: @font-weight-semibold;
+    line-height: @font-size-base * (24 / 20);
+    color: @text-primary;
+    margin-bottom: @spacing-sm;
+    max-width: 1200px;
+    min-width: 90%;
 
     @media (max-width: (@breakpoint-md - 1px)) {
       font-size: @font-size-sm;
@@ -720,8 +980,80 @@ a {
     align-items: start;
 
     @media (min-width: @breakpoint-lg) {
-      grid-template-columns: 2fr 1fr;
+      // Make the main info column ~80% and the side ~20%
+      grid-template-columns: 4fr 1fr;
     }
+  }
+
+  /* Qualifier grid and cards */
+  .qualifier-grid {
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: @spacing-xl;
+    margin-bottom: @spacing-2xl;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .qualifier-card {
+    border: 0px solid @text-primary;
+    padding: @spacing-xl;
+    border-radius: @border-radius-lg;
+    background: transparent;
+    min-height: 140px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &__title {
+      color: @text-primary;
+      font-family: @font-family-heading;
+      font-weight: @font-weight-bold;
+      font-size: @font-size-2xl;
+      margin: 0;
+    }
+
+    &__cta {
+      display: flex;
+      align-items: center;
+      gap: @spacing-md;
+      // Keep button and deadline on one line
+      flex-wrap: nowrap;
+      margin-top: @spacing-md;
+    }
+
+    &__register {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      // Smaller button size for qualifier card
+      padding: @spacing-xs @spacing-sm;
+      font-size: @font-size-sm;
+      border: 2px solid @text-primary;
+      color: @bg-registration;
+      background: #fff;
+      text-decoration: none;
+      font-family: @font-family-heading;
+      font-weight: @font-weight-bold;
+
+      &:hover { opacity: 0.9; text-decoration: none; }
+    }
+
+    &__deadline {
+      color: @text-primary;
+      font-family: @font-family-text;
+      font-weight: @font-weight-semibold;
+      font-size: @font-size-sm;
+    }
+  }
+
+  .player-interview-link {
+    font-weight: bold;
+    font-size: @font-family-text;
   }
 
   .tournament-format {
@@ -808,20 +1140,34 @@ a {
 
   &__cta {
     text-align: left;
+    display: flex;
+    align-items: center;
+    gap: @spacing-lg;
+    flex-wrap: wrap;
 
-    .btn {
-      width: 400px;
+    .players__register {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: @spacing-sm @spacing-xl;
+      border: 2px solid @text-primary;
+      color: @bg-registration;
+      background: #fff;
+      text-decoration: none;
+      font-family: @font-family-heading;
+      font-weight: @font-weight-bold;
 
-      @media (max-width: (@breakpoint-md - 1px)) {
-        width: 80vw;
+      &:hover {
+        opacity: 0.9;
+        text-decoration: none;
       }
     }
 
-    a {
-      text-decoration: none;
-      color: @bg-registration;
-      font-family: @font-family-heading;
-      font-weight: @font-weight-bold;
+    .players__deadline {
+      color: @text-primary;
+      font-family: @font-family-text;
+      font-weight: @font-weight-semibold;
+      font-size: @font-size-base;
     }
   }
 }
@@ -906,9 +1252,9 @@ a {
   }
 
   &__contact {
-    .separator {
+    .separator_sub {
       display: block;
-      width: 172px;
+      width: 209px;
       height: 2px;
       background-color: @text-primary;
       margin-top: 30px;
@@ -968,7 +1314,7 @@ a {
     img {
       position: absolute;
       transform: translateY(-60%) translateX(-50%);
-      width: 35vw;
+      width: 25vw;
       z-index: 1;
 
       @media (max-width: (@breakpoint-md - 1)) {
