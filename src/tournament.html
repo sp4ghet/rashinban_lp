@@ -43,29 +43,7 @@
 
   <body>
     <header class="header">
-      <nav class="nav">
-        <div class="nav__container">
-          <div class="nav__brand">
-            <a href="/" class="nav__logo">
-              <img
-                src="/src/assets/images/logo-side.svg"
-                alt="RASHINBAN 2025"
-                class="nav__logo"
-              />
-            </a>
-          </div>
-          <ul class="nav__menu">
-            <li class="nav__item">
-              <a href="./index.html" class="nav__link">HOME</a>
-            </li>
-          </ul>
-          <button class="nav__toggle" id="nav-toggle">
-            <span class="nav__toggle-line"></span>
-            <span class="nav__toggle-line"></span>
-            <span class="nav__toggle-line"></span>
-          </button>
-        </div>
-      </nav>
+     <include src="./components/nav.html"></include>
     </header>
 
     <main class="main">
@@ -171,59 +149,8 @@
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__content">
-          <img class="footer__logo" src="/src/assets/images/logo-side.svg" />
-          <div class="footer__contact">
-            <p class="contact-description">
-              大会に関するご質問やご相談、パートナーシップのご提案は、下記よりお気軽にご連絡ください。<br />
-              プレイヤー登録やイベント詳細について、運営チームがサポートします。
-            </p>
-            <div class="separator"></div>
-            <p class="contact-description">
-              <strong>E-Mail:</strong>
-              <a href="mailto:rashinban.geo@gmail.com"
-                >rashinban.geo@gmail.com</a
-              >
-              <br />
-              <strong>Discord:</strong>
-              <a
-                href="https://discord.gg/8mM5FzeQwu"
-                target="_blank"
-                rel="noreferrer"
-                >世界マップ鯖</a
-              >
-            </p>
-          </div>
-          <div class="footer__social">
-            <ul>
-              <li>
-                <a href="https://x.com/rashinban_geo"
-                  ><i class="bi bi-twitter"></i
-                ></a>
-              </li>
-              <li>
-                <a href="https://twitch.tv/sp4geo"
-                  ><i class="bi bi-twitch"></i
-                ></a>
-              </li>
-              <li>
-                <a href="https://youtube.com/@sp4geo"
-                  ><i class="bi bi-youtube"></i
-                ></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer__bottom">
-          <p>&copy; 2025 RASHINBAN Tournament. All rights reserved.</p>
-        </div>
-        <div class="footer__bottom-logo">
-          <img src="/src/assets/images/compass-footer.svg" />
-        </div>
-      </div>
-    </footer>
+
+  <include src="./components/footer.html"></include>
 
     <script src="/src/scripts/main.js"></script>
   </body>
