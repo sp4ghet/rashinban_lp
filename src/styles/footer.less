@@ -32,11 +32,12 @@
   }
 
   &__bottom-logo {
-    width: 100%; text-align: center;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+
     img {
-      position: absolute; transform: translateY(-40%) translateX(-50%); width: 25vw; z-index: 1;
-      /* Show only the top half of the image */
-      clip-path: inset(0 0 50% 0);
+      position: relative;
       @media (max-width: (@breakpoint-md - 1)) { visibility: hidden; }
     }
   }

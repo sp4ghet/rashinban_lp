@@ -1187,20 +1187,12 @@ a {
 .footer {
   background-color: @bg-primary;
   color: @text-primary;
-  padding: @spacing-3xl 0 0 0;
+  padding: 0 !important;
 
   &__content {
     text-align: left;
   }
-
-  &__logo {
-    margin-bottom: @spacing-xl;
-    // Move the footer logo slightly down from the top
-    margin-top: @spacing-md;
-  }
-
   &__contact {
-    
     .separator {
       display: block;
       width: 20%;
@@ -1255,7 +1247,6 @@ a {
   }
 
   &__bottom {
-    padding-top: @spacing-xl;
     text-align: left;
 
     p {
@@ -1263,24 +1254,6 @@ a {
       font-family: @font-family-text;
       font-weight: @font-weight-semibold;
       margin-bottom: 0;
-    }
-  }
-
-  &__bottom-logo {
-    width: 100%;
-    text-align: center;
-
-    img {
-      position: absolute;
-      // Show only the top half of the image and center horizontally
-      transform: translateY(0%) translateX(-50%);
-      clip-path: inset(0 0 50% 0);
-      width: 25vw;
-      z-index: 1;
-
-      @media (max-width: (@breakpoint-md - 1)) {
-        visibility: hidden;
-      }
     }
   }
 }
