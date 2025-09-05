@@ -48,7 +48,7 @@
 
       .news__date {
         font-family: @font-family-primary;
-        font-weight: @font-weight-medium;
+        font-weight: @font-weight-bold;
         font-size: @font-size-xl;
         min-width: 8%;
 
@@ -73,26 +73,25 @@
     z-index: 2;
   }
 
-  &__btn {
+  .btn.news__btn {
     border: 2px solid #fff;
     color: #fff;
     text-decoration: none;
     background: transparent;
-    padding: @spacing-xs @spacing-md; // narrower, shorter
-    border-radius: 999px; // more rounded corners
-    font-family: @font-family-primary;
-    font-weight: @font-weight-medium; // a bit bolder
-    line-height: 1.2; // slightly taller text
+    padding: @spacing-xs @spacing-md;
+    border-radius: 999px;
+    font-weight: @font-weight-medium;
+    line-height: 1.2;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 203px;
     height: 56px;
-    box-sizing: border-box; // include border in fixed size
+    box-sizing: border-box;
 
     &:hover {
       background: #fff;
-      color: @bg-finals;
+      color: @bg-news;
       text-decoration: none;
     }
   }
