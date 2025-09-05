@@ -132,6 +132,31 @@ a {
   }
 }
 
+// Unified "View More" button
+.btn--view-more {
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  background: transparent;
+  padding: @spacing-xs @spacing-md;
+  border-radius: 999px;
+  font-weight: @font-weight-medium;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 203px;
+  height: 56px;
+  box-sizing: border-box;
+
+  &:hover {
+    background: #fff;
+    // Use section-provided hover color if available
+    color: var(--view-more-hover-color, @text-primary);
+    text-decoration: none;
+  }
+}
+
 // Section titles
 .section__title {
   text-align: center;

@@ -3,6 +3,8 @@
   padding: @spacing-4xl 0;
   background-color: @bg-finals;
   position: relative;
+  // Provide hover color for shared view-more button
+  --view-more-hover-color: @bg-finals;
 
   &__title {
     text-align: left;
@@ -137,27 +139,4 @@
     z-index: 2;
   }
 
-  &__btn {
-    border: 2px solid #fff;
-    color: #fff;
-    text-decoration: none;
-    background: transparent;
-    padding: @spacing-xs @spacing-md; // narrower, shorter
-    border-radius: 999px; // more rounded corners
-    font-family: @font-family-primary;
-    font-weight: @font-weight-medium; // a bit bolder
-    line-height: 1.2; // slightly taller text
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 203px;
-    height: 56px;
-    box-sizing: border-box; // include border in fixed size
-
-    &:hover {
-      background: #fff;
-      color: @bg-finals;
-      text-decoration: none;
-    }
-  }
 }

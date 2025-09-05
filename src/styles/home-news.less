@@ -2,6 +2,8 @@
 .news {
   background-color: @bg-news;
   padding: @spacing-4xl 0;
+  // Provide hover color for shared view-more button
+  --view-more-hover-color: @bg-news;
 
   &__title {
     text-align: center;
@@ -73,26 +75,5 @@
     z-index: 2;
   }
 
-  .btn.news__btn {
-    border: 2px solid #fff;
-    color: #fff;
-    text-decoration: none;
-    background: transparent;
-    padding: @spacing-xs @spacing-md;
-    border-radius: 999px;
-    font-weight: @font-weight-medium;
-    line-height: 1.2;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 203px;
-    height: 56px;
-    box-sizing: border-box;
-
-    &:hover {
-      background: #fff;
-      color: @bg-news;
-      text-decoration: none;
-    }
-  }
+  // uses shared .btn--view-more
 }
