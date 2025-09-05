@@ -145,16 +145,17 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  background-color: transparent; // transparent nav bar
-  backdrop-filter: none;
-  border-bottom: none;
+  background-color: @bg-primary;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid @border-color;
   z-index: @z-fixed;
   transition: all @transition-normal;
 
   &--scrolled {
-    background-color: transparent;
-    box-shadow: none;
-    border-bottom-color: transparent;
+    background-color: @bg-secondary;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+    color: @secondary-color;
   }
 }
 
@@ -163,7 +164,7 @@ a {
 
   &__container {
     max-width: @container-max-width;
-    margin: 24px auto;
+    margin: 12px auto;
     padding: 0 @container-padding;
     display: flex;
     align-items: center;
