@@ -16,14 +16,14 @@
   }
 
   hr {
-    margin-bottom:  @spacing-40;
+    margin-bottom: @spacing-40;
   }
 
-  p:has(img){
+  p:has(img) {
     text-align: center;
   }
 
-  img{
+  img {
     max-width: 100%;
 
     @media (min-width: @breakpoint-md) {
@@ -61,30 +61,34 @@
 
   h4 {
     font-size: @font-size-base;
+
     @media (min-width: @breakpoint-md) {
       font-size: @font-size-lg;
     }
   }
 
   ul {
-    margin-bottom:  @spacing-40;
+    margin-bottom: @spacing-40;
   }
 
   li {
-    margin-left:  @spacing-md;
+    margin-left: @spacing-md;
     font-size: @font-size-sm;
-    ul{
+
+    ul {
       margin-bottom: 0;
     }
+
     @media (min-width: @breakpoint-md) {
       font-size: @font-size-base;
     }
   }
 
-  a{
+  a {
     color: @text-secondary;
   }
-  a:hover{
+
+  a:hover {
     color: @text-secondary-light;
   }
 
@@ -97,7 +101,7 @@
     }
   }
 
-  .column-row{
+  .column-row {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -105,38 +109,38 @@
     margin-bottom: @spacing-40;
 
     @media (min-width: @breakpoint-md) {
-        flex-direction: row;
+      flex-direction: row;
     }
 
-    div{
+    div {
       width: 100%;
+
       @media (min-width: @breakpoint-md) {
         width: 50%;
       }
     }
 
-    img{
+    img {
       max-width: 100%;
     }
   }
 
 
-  .grid-4x4{
-    margin-bottom:  @spacing-40;
+  .grid-4x4 {
+    margin-bottom: @spacing-40;
 
     @media (min-width: @breakpoint-md) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap:  @spacing-40;
+      gap: @spacing-40;
     }
-    
 
-    img{
+    img {
       max-width: 100%;
     }
   }
 
-  .centered{
+  .centered {
     display: flex;
     flex-direction: column;
     justify-content: center;

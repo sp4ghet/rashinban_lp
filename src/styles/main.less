@@ -145,17 +145,16 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  background-color: @bg-primary;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid @border-color;
+  background-color: transparent; // transparent nav bar
+  backdrop-filter: none;
+  border-bottom: none;
   z-index: @z-fixed;
   transition: all @transition-normal;
 
   &--scrolled {
-    background-color: @bg-secondary;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-bottom-color: rgba(0, 0, 0, 0.1);
-    color: @secondary-color;
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom-color: transparent;
   }
 }
 
@@ -164,7 +163,7 @@ a {
 
   &__container {
     max-width: @container-max-width;
-    margin: 12px auto;
+    margin: 24px auto;
     padding: 0 @container-padding;
     display: flex;
     align-items: center;
@@ -254,8 +253,14 @@ a {
       line-height: 2;
     }
 
-    &:hover { opacity: 0.85; }
-    &:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+    &:hover {
+      opacity: 0.85;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
   }
 
   &__toggle {
@@ -293,10 +298,12 @@ a {
   transform: translateY(-4px);
   transition: opacity @transition-fast, transform @transition-fast;
 }
+
 .tooltip--visible {
   opacity: 1;
   transform: translateY(0);
 }
+
 .tooltip--deadline::after {
   content: '';
   position: absolute;
@@ -307,6 +314,7 @@ a {
   border-style: solid;
   border-color: transparent transparent rgba(0, 0, 0, 0.9) transparent;
 }
+
 .tooltip--deadline.tooltip--below::after {
   bottom: auto;
   top: -6px;
@@ -375,9 +383,19 @@ a {
     justify-content: center;
     border-radius: @border-radius-md;
 
-    i { font-size: 1rem; line-height: 1; }
-    &:hover { opacity: 0.85; }
-    &:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+    i {
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
   }
 }
 
@@ -428,6 +446,106 @@ a {
     }
   }
 }
+
+.news {
+  background-color: @bg-news;
+  padding: @spacing-4xl 0;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 0;
+    position: relative;
+    line-height: @font-size-4xl * (124 / 180);
+    font-family: @font-family-heading;
+    color: @text-primary;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      font-size: @font-size-3xl;
+      line-height: @font-size-3xl;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: @spacing-2xl;
+    border-top: 2px solid @text-primary;
+
+    li {
+      position: relative;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      margin-bottom: @spacing-sm;
+      color: @text-primary;
+
+      font-size: @font-size-base;
+      font-family: @font-family-text;
+      font-weight: @font-weight-semibold;
+
+      border-bottom: 2px solid @text-primary;
+
+      @media (max-width: (@breakpoint-md - 1px)) {
+        font-size: @font-size-sm;
+      }
+
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      align-items: center;
+      gap: @spacing-2xl;
+
+      .news__date {
+        font-family: @font-family-primary;
+        font-weight: @font-weight-bold;
+        font-size: @font-size-xl;
+        min-width: 8%;
+
+        @media (max-width: (@breakpoint-md - 1px)) {
+          min-width: 38%;
+        }
+      }
+
+      .news__text {
+        font-family: @font-family-text;
+        font-weight: @font-weight-semibold;
+        font-size: @font-size-base;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: @spacing-2xl;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__btn {
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    background: transparent;
+    padding: @spacing-xs @spacing-md; // narrower, shorter
+    border-radius: 999px; // more rounded corners
+    font-family: @font-family-primary;
+    font-weight: @font-weight-medium; // a bit bolder
+    line-height: 1.2; // slightly taller text
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 203px;
+    height: 56px;
+    box-sizing: border-box; // include border in fixed size
+
+    &:hover {
+      background: #fff;
+      color: @bg-finals;
+      text-decoration: none;
+    }
+  }
+}
+
 
 .final-detail {
   &__btn {

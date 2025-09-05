@@ -150,14 +150,14 @@
     border-color: #fff;
     font-size: (@font-size-sm + 8px) !important;
     font-weight: @font-weight-bold;
-    width: auto;           // allow text to fit
+    width: auto; // allow text to fit
     min-width: 300px !important;
     border-radius: 10px !important;
-    max-height:  (@font-size-sm + 30px) !important;
+    max-height: (@font-size-sm + 30px) !important;
     margin-bottom: @spacing-2xl;
 
     &:hover {
-      background: #fff;    // keep white on hover
+      background: #fff; // keep white on hover
       color: @bg-registration;
     }
   }
@@ -272,5 +272,8 @@ img.players__pc {
   transform: translateY(-25%) rotate(15.32deg);
   width: 25vw;
   z-index: 1;
-  @media (max-width: (@breakpoint-lg - 1px)) { display: none; }
+
+  @media (max-width: (@breakpoint-lg - 1px)) {
+    display: none;
+  }
 }

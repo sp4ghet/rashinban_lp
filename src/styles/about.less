@@ -28,7 +28,7 @@
   }
 
   &__description {
-    p{
+    p {
       text-align: left;
       font-family: @font-family-text;
       font-size: @font-size-base;
@@ -36,6 +36,7 @@
       line-height: @font-size-base * (24 / 20);
       color: @text-primary;
     }
+
     margin-bottom: @spacing-3xl;
     max-width: 100%;
 
@@ -45,39 +46,39 @@
   }
 
   ul {
-      text-align: left;
-      font-family: @font-family-text;
-      font-size: @font-size-base;
-      font-weight: @font-weight-semibold;
-      line-height: @font-size-base * (24 / 20);
+    text-align: left;
+    font-family: @font-family-text;
+    font-size: @font-size-base;
+    font-weight: @font-weight-semibold;
+    line-height: @font-size-base * (24 / 20);
+    color: @text-primary;
+
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      position: relative;
+      padding-left: @spacing-lg;
+      margin-bottom: @spacing-sm;
       color: @text-primary;
+      font-size: @font-size-base;
+      font-family: @font-family-text;
+      font-weight: @font-weight-semibold;
 
-      list-style: none;
-      padding-left: 0;
+      @media (max-width: (@breakpoint-md - 1px)) {
+        font-size: @font-size-sm;
+      }
 
-      li {
-        position: relative;
-        padding-left: @spacing-lg;
-        margin-bottom: @spacing-sm;
+      &:before {
+        content: "\2022";
+        position: absolute;
+        left: 0;
+        top: 2px;
         color: @text-primary;
-        font-size: @font-size-base;
-        font-family: @font-family-text;
-        font-weight: @font-weight-semibold;
-
-        @media (max-width: (@breakpoint-md - 1px)) {
-          font-size: @font-size-sm;
-        }
-
-        &:before {
-          content: "\2022";
-          position: absolute;
-          left: 0;
-          top: 2px;
-          color: @text-primary;
-          font-size: @font-size-sm;
-        }
+        font-size: @font-size-sm;
       }
     }
+  }
 
   &__actions {
     display: flex;
@@ -103,7 +104,11 @@
     height: 56px;
     box-sizing: border-box; // include border in fixed size
 
-    &:hover { background: #fff; color: @bg-primary; text-decoration: none; }
+    &:hover {
+      background: #fff;
+      color: @bg-primary;
+      text-decoration: none;
+    }
   }
 
   img.about__compass {
@@ -118,7 +123,8 @@
       width: 30vw;
     }
 
-    @media (max-width: (@breakpoint-lg - 1px)) { display: none; }
+    @media (max-width: (@breakpoint-lg - 1px)) {
+      display: none;
+    }
   }
 }
-
