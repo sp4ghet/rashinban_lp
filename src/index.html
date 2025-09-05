@@ -38,48 +38,7 @@
 
 <body>
   <header class="header">
-    <nav class="nav">
-      <div class="nav__container">
-        <div class="nav__brand">
-        </div>
-        <ul class="nav__menu">
-          <li class="nav__item nav__item--close">
-            <button class="nav__close" type="button" aria-label="メニューを閉じる">
-              <i class="bi bi-x-lg" aria-hidden="true"></i>
-            </button>
-          </li>
-          <li class="nav__item">
-            <a href="#news" class="nav__link">NEWS</a>
-          </li>
-          <li class="nav__item">
-            <a href="#qualifiers" class="nav__link">ABOUT</a>
-          </li>
-          <li class="nav__item">
-            <a href="#players" class="nav__link">TOURNAMENT</a>
-          </li>
-          <li class="nav__item">
-            <a href="#volunteers" class="nav__link">TICKETS</a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">PLAYERS</a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">FAQ</a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">STAFF</a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">CONTACTS</a>
-          </li>
-        </ul>
-        <button class="nav__toggle" id="nav-toggle">
-          <span class="nav__toggle-line"></span>
-          <span class="nav__toggle-line"></span>
-          <span class="nav__toggle-line"></span>
-        </button>
-      </div>
-    </nav>
+    <include src="./components/nav.html"></include>
   </header>
 
   <main class="main">
@@ -109,7 +68,7 @@
     <!-- <include src="./sections/volunteers.html"></include> -->
   </main>
 
-  <include src="./sections/footer.html"></include>
+  <include src="./components/footer.html"></include>
 
   <!-- Ticket popup: always visible on right, closable -->
   <div class="ticket-popup" role="dialog" aria-label="チケット情報">
