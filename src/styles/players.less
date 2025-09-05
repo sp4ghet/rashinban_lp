@@ -2,6 +2,7 @@
 .players {
   padding: @spacing-xl 0;
   background-color: @bg-registration;
+  position: relative;
 
   &__title {
     text-align: left;
@@ -263,4 +264,15 @@
       font-weight: @font-weight-bold;
     }
   }
+}
+
+
+img.players__pc {
+  position: absolute;
+  right: 0%;
+  top: 70%;
+  transform: translateY(-25%) rotate(15.32deg);
+  width: 25vw;
+  z-index: 1;
+  @media (max-width: (@breakpoint-lg - 1px)) { display: none; }
 }
