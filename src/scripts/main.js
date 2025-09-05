@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollEffects();
     initLiveToggle();
     initTicketPopup();
+    initDeadlineTooltips();
 });
 
 // Navigation functionality
@@ -131,4 +132,94 @@ function initLiveToggle() {
             });
         });
     });
+}
+
+// Show remaining time tooltip on qualifier deadlines
+function initDeadlineTooltips() {
+    const deadlineEls = document.querySelectorAll('.qualifier-card__deadline');
+    if (!deadlineEls.length) return;
+
+    // Single tooltip element reused for all deadlines
+    const tip = document.createElement('div');
+    tip.className = 'tooltip tooltip--deadline';
+    tip.setAttribute('role', 'tooltip');
+    document.body.appendChild(tip);
+
+    const formatRemaining = (ms) => {
+        if (ms <= 0) return '締切済み';
+        const totalMinutes = Math.floor(ms / (60 * 1000));
+        const days = Math.floor(totalMinutes / (60 * 24));
+        const hours = Math.floor((totalMinutes % (60 * 24)) / 60);
+        const minutes = totalMinutes % 60;
+        const parts = [];
+        if (days) parts.push(`${days}日`);
+        parts.push(`${hours}時間`);
+        parts.push(`${minutes}分`);
+        return `締切まで 残り: ${parts.join(' ')}`;
+    };
+
+    const parseDeadline = (el) => {
+        let iso = el.getAttribute('data-deadline');
+        if (!iso) {
+            const text = el.textContent || '';
+            const m = text.match(/(\d{1,2})\/(\d{1,2}).*?(\d{1,2}):(\d{2})/);
+            if (m) {
+                const year = new Date().getFullYear();
+                const mm = String(parseInt(m[1], 10)).padStart(2, '0');
+                const dd = String(parseInt(m[2], 10)).padStart(2, '0');
+                const hh = String(parseInt(m[3], 10)).padStart(2, '0');
+                const mi = String(parseInt(m[4], 10)).padStart(2, '0');
+                iso = `${year}-${mm}-${dd}T${hh}:${mi}:00+09:00`;
+            }
+        }
+        if (!iso) return null;
+        const deadline = new Date(iso);
+        if (isNaN(deadline.getTime())) return null;
+        return deadline;
+    };
+
+    const showTip = (el) => {
+        const deadline = parseDeadline(el);
+        if (!deadline) return;
+        const now = new Date();
+        const diff = deadline.getTime() - now.getTime();
+        tip.textContent = formatRemaining(diff);
+
+        // Make visible to measure
+        tip.style.display = 'block';
+        tip.classList.add('tooltip--visible');
+        tip.classList.remove('tooltip--below');
+
+        const rect = el.getBoundingClientRect();
+        const tipW = tip.offsetWidth;
+        const tipH = tip.offsetHeight;
+
+        let left = rect.left + window.scrollX + (rect.width / 2) - (tipW / 2);
+        left = Math.max(window.scrollX + 8, Math.min(left, window.scrollX + window.innerWidth - tipW - 8));
+
+        // Prefer above; if not enough space, place below
+        let top = rect.top + window.scrollY - tipH - 10;
+        if (top < window.scrollY + 8) {
+            top = rect.bottom + window.scrollY + 10;
+            tip.classList.add('tooltip--below');
+        }
+
+        tip.style.left = `${left}px`;
+        tip.style.top = `${top}px`;
+    };
+
+    const hideTip = () => {
+        tip.classList.remove('tooltip--visible');
+        tip.style.display = 'none';
+    };
+
+    deadlineEls.forEach((el) => {
+        el.addEventListener('mouseenter', () => showTip(el));
+        el.addEventListener('mouseleave', hideTip);
+        el.addEventListener('focus', () => showTip(el));
+        el.addEventListener('blur', hideTip);
+    });
+
+    window.addEventListener('scroll', hideTip, { passive: true });
+    window.addEventListener('resize', hideTip, { passive: true });
 }

@@ -97,6 +97,13 @@
     filter: brightness(1.05);
   }
 
+  // Make email line in the second card a bit larger
+  .apply-card:nth-of-type(2) .apply-button {
+    font-size: 1.15rem; // one size up
+    text-transform: none; // keep email lowercase
+    letter-spacing: 0.01em;
+  }
+
   /* ===== レスポンシブ微調整 ===== */
   @media (max-width: @breakpoint-md) {
     .apply-card {
