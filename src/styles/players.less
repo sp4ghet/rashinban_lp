@@ -51,6 +51,13 @@
     grid-template-columns: 1fr 1fr;
     gap: @spacing-xl;
     margin-bottom: 0;
+
+    // Stack cards on small screens
+    @media (max-width: (@breakpoint-md - 1px)) {
+      grid-template-columns: 1fr;
+      max-width: 100%;
+      gap: @spacing-lg;
+    }
   }
 
   .qualifier-card {
@@ -78,6 +85,11 @@
       gap: @spacing-md;
       flex-wrap: nowrap;
       margin-top: @spacing-sm;
+
+      @media (max-width: (@breakpoint-md - 1px)) {
+        flex-wrap: wrap;
+        gap: @spacing-sm;
+      }
     }
 
     &__register {
@@ -105,6 +117,10 @@
       font-family: @font-family-text;
       font-weight: @font-weight-semibold;
       font-size: @font-size-base + 4px;
+
+      @media (max-width: (@breakpoint-md - 1px)) {
+        font-size: @font-size-sm;
+      }
     }
   }
 
@@ -129,17 +145,25 @@
     background: #fff;
     color: @bg-registration; // match section blue
     border-color: #fff;
-    font-size: (@font-size-sm + 8px) !important;
+    font-size: (@font-size-sm + 8px);
     font-weight: @font-weight-bold;
     width: auto; // allow text to fit
-    min-width: 300px !important;
-    border-radius: 10px !important;
-    max-height: (@font-size-sm + 30px) !important;
+    min-width: 300px;
+    border-radius: 10px;
+    max-height: (@font-size-sm + 30px);
     margin-bottom: @spacing-2xl;
 
     &:hover {
       background: #fff; // keep white on hover
       color: @bg-registration;
+    }
+
+    // Make the rulebook button fluid on small screens
+    @media (max-width: (@breakpoint-md - 1px)) {
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+      font-size: @font-size-sm;
     }
   }
 
