@@ -68,6 +68,8 @@
     visibility: hidden;
     pointer-events: none;
     z-index: @z-fixed;
+    overflow-y: auto; // allow scroll on short viewports
+    -webkit-overflow-scrolling: touch;
 
     &--active {
       transform: translateX(0);
@@ -91,6 +93,30 @@
 
     &:hover {
       color: @primary-dark;
+    }
+  }
+
+  // Compact the drawer menu on short-height screens
+  @media (max-height: 700px) {
+    &__menu {
+      gap: @spacing-md;
+      padding: 56px @spacing-lg @spacing-lg;
+    }
+    &__link {
+      font-size: @font-size-lg;
+    }
+    &__close {
+      i { font-size: 2.2rem; }
+    }
+  }
+
+  @media (max-height: 560px) {
+    &__menu {
+      gap: @spacing-sm;
+      padding: 48px @spacing-md @spacing-md;
+    }
+    &__link {
+      font-size: @font-size-base;
     }
   }
 
