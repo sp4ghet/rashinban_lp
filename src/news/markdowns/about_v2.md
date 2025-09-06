@@ -14,7 +14,7 @@ GeoGuessrは、ランダムに選ばれたGoogleストリートビューの画�
 自分がどうGuessするかということだけではなく、相手との駆け引きやGuessのスピードなど、戦略も重要になってきます。  
 ※what is Duels1\~4 の画像を挿入
 
-[GeoGuessrで使うメタや用語の解説を詳しくご覧になりたい方はこちら](?tab=t.4vix59fp8zn)
+<!-- [GeoGuessrで使うメタや用語の解説を詳しくご覧になりたい方はこちら](?tab=t.4vix59fp8zn) -->
 
 ### RASHINBAN 2025とは
 

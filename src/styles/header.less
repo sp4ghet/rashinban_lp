@@ -120,6 +120,17 @@
     }
   }
 
+  // Handle very narrow screens: avoid 1px seam showing menu background
+  @media (max-width: 320px) {
+    &__menu {
+      width: 100vw; // cover full width when open
+      max-width: none;
+    }
+    &__menu:not(.nav__menu--active) {
+      transform: translateX(calc(100% + 2px)); // push fully off-screen when closed
+    }
+  }
+
   &__close {
     background: none;
     border: none;
