@@ -107,6 +107,13 @@
     gap: @spacing-3xl;
     font-family: @font-family-heading;
     font-weight: @font-weight-bold;
+    flex-wrap: nowrap;
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      flex-wrap: wrap;
+      column-gap: @spacing-xl;
+      row-gap: @spacing-lg;
+    }
   }
 
   &__val-big {
