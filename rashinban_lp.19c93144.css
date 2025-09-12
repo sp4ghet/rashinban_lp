@@ -161,6 +161,17 @@
   display: flex;
 }
 
+.article__live-container {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 960px;
+}
+
+.article__live-container iframe {
+  width: 100%;
+  height: 100%;
+}
+
 .news-spacer {
   height: 95px;
 }
@@ -471,6 +482,66 @@
   }
 }
 
+.nav__menu {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1030;
+  -webkit-overflow-scrolling: touch;
+  background-color: #ff3030;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 80vw;
+  max-width: 380px;
+  padding: 72px 2rem 2rem;
+  list-style: none;
+  transition: transform .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: auto;
+  transform: translateX(100%);
+}
+
+@media (height <= 700px) {
+  .nav__menu {
+    gap: 1rem;
+    padding: 56px 1.5rem 1.5rem;
+  }
+
+  .nav__link {
+    font-size: 36px;
+  }
+
+  .nav__close i {
+    font-size: 2.2rem;
+  }
+}
+
+@media (height <= 560px) {
+  .nav__menu {
+    gap: .5rem;
+    padding: 48px 1rem 1rem;
+  }
+
+  .nav__link {
+    font-size: 20px;
+  }
+}
+
+@media (width <= 320px) {
+  .nav__menu {
+    width: 100vw;
+    max-width: none;
+  }
+
+  .nav__menu:not(.nav__menu--active) {
+    transform: translateX(calc(100% + 2px));
+  }
+}
+
 .hero__container {
   background-image: url("hero.b92c2b72.png");
   background-position: center;
@@ -485,6 +556,26 @@
   padding: 0;
   display: flex;
   position: relative;
+}
+
+@media (width <= 639px) {
+  .hero__container {
+    background-color: #ff3030;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 70vh;
+  }
+}
+
+@media (width <= 399px) {
+  .hero__container {
+    background-color: #ff3030;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 50vh;
+  }
 }
 
 .hero__logo {
@@ -514,6 +605,7 @@
 }
 
 .news {
+  --view-more-hover-color: #353535;
   background-color: #353535;
   padding: 6rem 0;
 }
@@ -591,30 +683,8 @@
   position: relative;
 }
 
-.news .btn.news__btn {
-  color: #fff;
-  box-sizing: border-box;
-  background: none;
-  border: 2px solid #fff;
-  border-radius: 999px;
-  justify-content: center;
-  align-items: center;
-  width: 203px;
-  height: 56px;
-  padding: .25rem 1rem;
-  font-weight: 500;
-  line-height: 1.2;
-  text-decoration: none;
-  display: inline-flex;
-}
-
-.news .btn.news__btn:hover {
-  color: #353535;
-  background: #fff;
-  text-decoration: none;
-}
-
 .about {
+  --view-more-hover-color: #ff3030;
   background-color: #ff3030;
   padding: 6rem 0;
   position: relative;
@@ -709,29 +779,6 @@
   position: relative;
 }
 
-.about .about__btn {
-  color: #fff;
-  box-sizing: border-box;
-  background: none;
-  border: 2px solid #fff;
-  border-radius: 999px;
-  justify-content: center;
-  align-items: center;
-  width: 203px;
-  height: 56px;
-  padding: .25rem 1rem;
-  font-weight: 500;
-  line-height: 1.2;
-  text-decoration: none;
-  display: inline-flex;
-}
-
-.about .about__btn:hover {
-  color: #ff3030;
-  background: #fff;
-  text-decoration: none;
-}
-
 .about img.about__compass {
   z-index: 1;
   width: 30vw;
@@ -754,9 +801,11 @@
 }
 
 .final-event {
+  --view-more-hover-color: #ffb730;
   background-color: #ffb730;
   padding: 6rem 0;
   position: relative;
+  overflow-x: hidden;
 }
 
 .final-event__title {
@@ -899,31 +948,8 @@
   position: relative;
 }
 
-.final-detail__btn {
-  color: #fff;
-  box-sizing: border-box;
-  background: none;
-  border: 2px solid #fff;
-  border-radius: 999px;
-  justify-content: center;
-  align-items: center;
-  width: 203px;
-  height: 56px;
-  padding: .25rem 1rem;
-  font-family: kaneda-gothic, Noto Sans JP, sans-serif;
-  font-weight: 500;
-  line-height: 1.2;
-  text-decoration: none;
-  display: inline-flex;
-}
-
-.final-detail__btn:hover {
-  color: #ffb730;
-  background: #fff;
-  text-decoration: none;
-}
-
 .players {
+  --view-more-hover-color: #303aff;
   background-color: #303aff;
   padding: 6rem 0;
   position: relative;
@@ -980,6 +1006,14 @@
   display: grid;
 }
 
+@media (width <= 767px) {
+  .players .qualifier-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+}
+
 .players .qualifier-card {
   background: none;
   border: 0 solid #fff;
@@ -1006,6 +1040,13 @@
   gap: 1rem;
   margin-top: .5rem;
   display: flex;
+}
+
+@media (width <= 767px) {
+  .players .qualifier-card__cta {
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
 }
 
 .players .qualifier-card__register {
@@ -1035,6 +1076,12 @@
   font-weight: 700;
 }
 
+@media (width <= 767px) {
+  .players .qualifier-card__deadline {
+    font-size: 16px;
+  }
+}
+
 .players .player-interview-link {
   font-weight: bold;
   font-size: "Noto Sans JP", sans-serif;
@@ -1048,45 +1095,31 @@
   position: relative;
 }
 
-.players .players__btn {
-  color: #fff;
-  box-sizing: border-box;
-  background: none;
-  border: 2px solid #fff;
-  border-radius: 999px;
-  justify-content: center;
-  align-items: center;
-  width: 203px;
-  height: 56px;
-  padding: .25rem 1rem;
-  font-weight: 500;
-  line-height: 1.2;
-  text-decoration: none;
-  display: inline-flex;
-}
-
-.players .players__btn:hover {
-  color: #303aff;
-  background: #fff;
-  text-decoration: none;
-}
-
 .players .players__btn--rulebook {
   color: #303aff;
   background: #fff;
   border-color: #fff;
+  border-radius: 10px;
   width: auto;
+  min-width: 300px;
+  max-height: 46px;
   margin-bottom: 3rem;
+  font-size: 24px;
   font-weight: 900;
-  border-radius: 10px !important;
-  min-width: 300px !important;
-  max-height: 46px !important;
-  font-size: 24px !important;
 }
 
 .players .players__btn--rulebook:hover {
   color: #303aff;
   background: #fff;
+}
+
+@media (width <= 767px) {
+  .players .players__btn--rulebook {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    font-size: 16px;
+  }
 }
 
 .players .tournament-format {
@@ -1204,7 +1237,7 @@ img.players__pc {
   z-index: 1;
   width: 25vw;
   position: absolute;
-  top: 77%;
+  top: 85%;
   right: 4%;
   transform: translateY(-25%)rotate(15.32deg);
 }
@@ -1503,6 +1536,29 @@ a:hover {
     padding: 1rem 2rem;
     font-size: 48px;
   }
+}
+
+.btn--view-more {
+  color: #fff;
+  box-sizing: border-box;
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  justify-content: center;
+  align-items: center;
+  width: 203px;
+  height: 56px;
+  padding: .25rem 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  display: inline-flex;
+}
+
+.btn--view-more:hover {
+  color: var(--view-more-hover-color, #fff);
+  background: #fff;
+  text-decoration: none;
 }
 
 .section__title {
