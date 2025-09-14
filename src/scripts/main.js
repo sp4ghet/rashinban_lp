@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initLiveToggle();
     initTicketPopup();
     initDeadlineTooltips();
+    initRegistrationAutoClose();
 });
 
 // Navigation functionality
@@ -222,4 +223,54 @@ function initDeadlineTooltips() {
 
     window.addEventListener('scroll', hideTip, { passive: true });
     window.addEventListener('resize', hideTip, { passive: true });
+}
+
+// Auto-close qualifier registration links after deadline
+function initRegistrationAutoClose() {
+    const cards = document.querySelectorAll('.qualifier-card');
+    if (!cards.length) return;
+
+    const parseDeadlineFromEl = (deadlineEl) => {
+        if (!deadlineEl) return null;
+        let iso = deadlineEl.getAttribute('data-deadline');
+        if (!iso) {
+            const text = deadlineEl.textContent || '';
+            const m = text.match(/(\d{1,2})\/(\d{1,2}).*?(\d{1,2}):(\d{2})/);
+            if (m) {
+                const year = new Date().getFullYear();
+                const mm = String(parseInt(m[1], 10)).padStart(2, '0');
+                const dd = String(parseInt(m[2], 10)).padStart(2, '0');
+                const hh = String(parseInt(m[3], 10)).padStart(2, '0');
+                const mi = String(parseInt(m[4], 10)).padStart(2, '0');
+                // Interpret as JST to match displayed times
+                iso = `${year}-${mm}-${dd}T${hh}:${mi}:00+09:00`;
+            }
+        }
+        if (!iso) return null;
+        const d = new Date(iso);
+        return isNaN(d.getTime()) ? null : d;
+    };
+
+    cards.forEach((card) => {
+        const link = card.querySelector('.qualifier-card__register');
+        const deadlineEl = card.querySelector('.qualifier-card__deadline');
+        if (!link || !deadlineEl) return;
+
+        const deadline = parseDeadlineFromEl(deadlineEl);
+        if (!deadline) return;
+
+        // Flip to closed right after the displayed minute (e.g., 23:59 -> 00:00)
+        const cutoverMs = deadline.getTime() + 60 * 1000; // plus 1 minute
+        const now = new Date();
+        if (now.getTime() >= cutoverMs) {
+            link.href = '#';
+            link.textContent = '選手登録終了';
+            link.setAttribute('aria-disabled', 'true');
+            // Avoid opening a blank tab when disabled
+            link.removeAttribute('target');
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+            });
+        }
+    });
 }
