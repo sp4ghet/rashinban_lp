@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "start": "parcel",
-    "prebuild": "rimraf -g dist/**/*.{html,js,css,png,jpg,svg,ico,map}",
+    "clean": "rimraf -g dist/**/*.{html,js,css,png,jpg,svg,ico,map}",
     "build": "parcel build"
   },
   "devDependencies": {
