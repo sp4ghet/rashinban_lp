@@ -9,7 +9,7 @@
   "scripts": {
     "start": "parcel",
     "clean": "rimraf -g dist/**/*.{html,js,css,png,jpg,svg,ico,map}",
-    "build": "parcel build"
+    "build": "parcel build --no-cache"
   },
   "devDependencies": {
     "@parcel/transformer-less": "^2.15.4",
