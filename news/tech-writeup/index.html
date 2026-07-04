@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Tech技術チーム Write Up - RASHINBAN 2025</title><meta name="description" content="Tech技術チーム Write Up"><meta property="og:title" content="Tech技術チーム Write Up - RASHINBAN 2025"><meta property="og:description" content="Tech技術チーム Write Up"><meta property="og:image" content="https://rashinban.org/assets/images/hero.png"><meta property="og:url" content="https://rashinban.org/news/tech-writeup/"><meta property="og:type" content="website"><meta property="og:site_name" content="RASHINBAN 2025"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Tech技術チーム Write Up - RASHINBAN 2025"><meta name="twitter:description" content="Tech技術チーム Write Up"><meta name="twitter:image" content="https://rashinban.org/assets/images/hero.png"><meta name="twitter:site" content="@rashinban_geo"><link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://use.typekit.net/sxv1pbn.css"><link rel="stylesheet" href="/_astro/_slug_.DbeDFpn3.css"></head> <body> <header class="header"> <nav class="nav"> <div class="nav__container"> <div class="nav__brand"> <a href="/" class="nav__logo"> <img src="/assets/images/logo-side.svg" alt="RASHINBAN 2025" class="nav__logo"> </a> </div> <ul class="nav__menu"> <li class="nav__item nav__item--close"> <button class="nav__close" type="button" aria-label="メニューを閉じる"> <i class="bi bi-x-lg" aria-hidden="true"></i> </button> </li> <li class="nav__item"> <a href="/#news" class="nav__link">NEWS</a> </li> <li class="nav__item"> <a href="/#live" class="nav__link">WATCH</a> </li> <li class="nav__item"> <a href="/#about" class="nav__link">ABOUT</a> </li> <li class="nav__item"> <a href="/tickets" class="nav__link">TICKETS & GOODS</a> </li> <li class="nav__item"> <a href="/players" class="nav__link">PLAYERS</a> </li> <li class="nav__item"> <a href="#" class="nav__link">FAQ</a> </li> <li class="nav__item"> <a href="/staff" class="nav__link">STAFF</a> </li> <li class="nav__item"> <a href="/#sponsor" class="nav__link">SPONSORS</a> </li> </ul> <button class="nav__toggle" id="nav-toggle"> <span class="nav__toggle-line"></span> <span class="nav__toggle-line"></span> <span class="nav__toggle-line"></span> </button> </div> </nav> </header> <main class="main">  <section class="article"> <div class="container" id="article__body">  <h2>Tech技術チーム</h2> <p class="article__date">2025.11.21</p> <p>2名体制で、選手名表示・ブラケット・スポンサーなど“頻繁にリアルタイムで更新される情報”を反映できるデータ駆動オーバーレイと、Geoguessrのゲーム内UIを調整するスクリプトの設計・運用。大会の進行とデザイン変更にワンテンポで追従しました。</p>
+<h3 id="members-voice">Member’s Voice</h3>
+<h4 id="zashnesstech共犯者zashnessbskysocial">Zashness（Tech共犯者）<a href="https://bsky.app/profile/zashness.bsky.social">@zashness.bsky.social</a></h4>
+<p>アメリカ在住のマップ系エンジニア。元お寿司屋さん。昭和生まれのジオゲ民で日本の配信に首を突っ込みつつ日本語も修行中です。</p>
+<p><strong>Q1. なぜ羅針盤に参加しようと思いましたか？また、今回のあなたの役割は何でしたか？</strong></p>
+<p>SUZUMEDON の強力な召喚魔法に呼ばれ、抗えませんでした。いつも日本コミュニティに学ばせてもらっているので、手伝えるなら光栄だと思い参加。担当は、画面上の選手名やスコア表示・ブラケット・スポンサーなど更新頻度の高い情報系ビジュアルとその裏側のデータパイプの実装です。</p>
+<p><strong>Q2. 今回の活動で、最もこだわった点や「これは自分の仕事だ！」と胸を張れることは何ですか？</strong></p>
+<p>もともとBracebracket.app を使う予定でしたが、RASHINBAN のデザイン性には当てはまらず、Bracebracket.app の「Google スプレッドシート → オーバーレイ」の発想を踏襲しつつ、デザインの変更がしやすい仕組みを自作しました。予選2→3→4→本戦とデザインが毎回調整されたので、既存のものではなく自由に対応しやすいシステムを組んだのは正解だったと思います。 スムーズににゅるにゅる動くブラケットができたときは思わずガッツポーズしてました。</p>
+<div class="centered"><img src="/assets/images/news/tech/writeup_tech_team_brackets.gif" alt="ブラケットがにゅるにゅるするよ～"> </div>
+<p><strong>Q3. 活動中に直面した最大の壁と、それをどう乗り越えたか教えてください。</strong></p>
+<p>スコアバーはゲーム映像と別レイヤーでOBS合成していましたが、予選第3回の5Kエフェクト導入時にスコアがエフェクトの上に乗ってしまう事故が発生。応急対応として、Tampermonkey でゲームページ内にスコア描画を直接注入、力技で見た目の破綻を回避しました。</p>
+<div class="centered"><img src="/assets/images/news/tech/writeup_tech_team_overlay.png" alt="OBSでオーバーレイとフィードの合成"> </div>
+<p><strong>Q4. 大会を終えた今、一番心に残っている瞬間や感想を教えてください。</strong></p>
+<p>時差の都合で、朝一番に結果を確認するワクワク感。そして「本番中に不具合が出ていても自分は寝ていた」という申し訳なさも同時に…（笑）。それでも、配信の完成度はコミュニティ大会の枠を超えていて、リプレイを見ながら思わず「こいつらプロだろ」と呟いてました。</p>
+<p><strong>Q5. 応援してくれたファンや、共に戦った仲間へメッセージをお願いします。</strong></p>
+<p>時差のせいでリアルタイムに張り付けない分、自分がぐーすか寝ている間に現場でバグを潰してくれたsp4ghetさんに心から感謝。英語対応も重ねて感謝。Tech はデザインを形にする係り、nm3氏のFigmaがあったから走り出せました。</p>
+<hr>
+<h4 id="sp4ghet-sp4ghet">sp4ghet <a href="https://twitter.com/sp4ghet">@sp4ghet</a></h4>
+<p>余ったタスクと当日の現場対応をしました。</p>
+<p><strong>Q1. なぜ羅針盤に参加しようと思いましたか？また、今回のあなたの役割は何でしたか？</strong></p>
+<p>主催ですが、元々ソフトウェア開発ができそうな人間が僕だけだったので基本的に全部やるつもりでした。Zashさんがめちゃめちゃ優秀だったので実際には配信で使うソフトウェアのほとんどはZashさんに作ってもらって、微調整等のちまちまとしたタスクを処理したり、時差の都合上当日の現地でのバグ潰し等は僕が行いました。 5Kエフェクトや選手ワイプの実装は担当してたっぽいです。Webはnanjaさんにサポートしてもらいつつ実装しました。 アナリストシステムで使ったYoutubeのUIを隠す拡張機能などのこまごまとしたツールとかも必要に応じて作ったりしました。</p>
+<p><strong>Q2. 今回の活動で、最もこだわった点や「これは自分の仕事だ！」と胸を張れることは何ですか？</strong></p>
+<p>デザインの創造神であるNM3と協力して、見た目がイケイケな状態にすることを強く意識しました。NM3の「こうしたい」をなるべく技術で実現するようにZashさんと相談しながら作ってた気がします。</p>
+<p><strong>Q3. 活動中に直面した最大の壁と、それをどう乗り越えたか教えてください。</strong></p>
+<p>なんやかんやギリギリまでデザインとかが調整していて当日ぶっつけでリリースしたソフトウェアを配信で使ったりする現場だったのですが、案の定たまに壊れたりしてたので配信チームから「壊れてね？」って言われたものをその場で直してたりしたのはちょっと修羅場っぽい感じはしましたが、お祭り感もあったので楽しかったです。</p>
+<div class="centered">
+  <img src="/assets/images/news/tech/tech-sp4ghet.jpg" alt="現地対応ニキ">
+  <p>当日朝にバグを直すマン</p>
+</div>
+<p><strong>Q4. 大会を終えた今、一番心に残っている瞬間や感想を教えてください。</strong></p>
+<p>本戦の設営を終えてお客さんが入場して、OP映像が流れ出したときに「着地できた・・」みたいな安心感を一度覚えた気がします。本戦はソフトウェア面では大きな事故も発生せずにZashさんとのコンビも洗練されてた気がします。</p>
+<p><strong>Q5. 応援してくれたファンや、共に戦った仲間へメッセージをお願いします。</strong></p>
+<p>Zashness my goat…</p>
+<h3 id="チームからの総括">チームからの総括</h3>
+<p>目標は、可能な限りデザインのビジョンを形にすること。ハックな対応とスマートな実装の絶妙なバランスを楽しむ。一緒に <code>git push --force</code> しませんか？</p>  </div> </section>  </main> <footer class="footer"> <div class="container"> <div class="footer__content"> <img class="footer__logo" src="/assets/images/logo-side.svg"> <div class="footer__contact"> <p class="contact-description">
+大会に関するご質問やご相談、パートナーシップのご提案は、下記よりお気軽にご連絡ください。<br>
+プレイヤー登録やイベント詳細について、運営チームがサポートします。
+</p> <div class="separator"></div> <p class="contact-description"> <strong>E-Mail:</strong> <a href="mailto:rashinban.geo@gmail.com">rashinban.geo@gmail.com</a> </p> </div> <div class="footer__social"> <ul> <li><a href="https://x.com/rashinban_geo" target="_blank" rel="noreferrer"><i class="bi bi-twitter"></i></a></li> <li><a href="https://twitch.tv/sp4geo" target="_blank" rel="noreferrer"><i class="bi bi-twitch"></i></a></li> <li><a href="https://youtube.com/@sp4geo" target="_blank" rel="noreferrer"><i class="bi bi-youtube"></i></a></li> <li><a href="https://www.tiktok.com/@rashinban_geo" aria-label="TikTok"><i class="bi bi-tiktok"></i></a></li> <li><a href="https://discord.gg/8mM5FzeQwu" aria-label="Discord"><i class="bi bi-discord"></i></a></li> </ul> </div> </div> <div class="footer__bottom"> <p>&copy; 2025 RASHINBAN Tournament. All rights reserved.</p> </div> <div class="footer__bottom-logo"> <img src="/assets/images/compass-footer.svg"> </div> </div> </footer> <script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.CpMBd9L1.js"></script> </body> </html>
