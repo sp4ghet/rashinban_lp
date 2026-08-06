@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script async src="https://www.googletagmanager.com/gtag/js?id=G-NW4JJZY1SY"></script><script>(function(){const GA_MEASUREMENT_ID = "G-NW4JJZY1SY";
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', GA_MEASUREMENT_ID);
+
+        // チケット購入リンクのクリックを ticket_click イベントとして計測する。
+        // (GA4 の拡張計測でも外部リンクは click として拾えるが、専用イベントの方が
+        //  GA4 上でキーイベント/コンバージョンとして扱いやすい)
+        document.addEventListener('click', (e) => {
+          const el = e.target.closest('[data-ga-ticket]');
+          if (!el) return;
+          gtag('event', 'ticket_click', {
+            ticket_label: el.getAttribute('data-ga-ticket'),
+            link_url: el.getAttribute('data-ga-ticket-url') || el.getAttribute('href'),
+          });
+        });
+      })();</script><title>PRIVACY POLICY - RASHINBAN 2026</title><meta name="description" content="RASHINBAN 2026 プライバシーポリシー"><meta property="og:title" content="PRIVACY POLICY - RASHINBAN 2026"><meta property="og:description" content="RASHINBAN 2026 プライバシーポリシー"><meta property="og:url" content="https://rashinban.org/privacy-policy/"><meta property="og:type" content="website"><meta property="og:site_name" content="RASHINBAN 2026"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="PRIVACY POLICY - RASHINBAN 2026"><meta name="twitter:description" content="RASHINBAN 2026 プライバシーポリシー"><meta name="twitter:site" content="@rashinban_geo"><link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://use.typekit.net/sxv1pbn.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"><link rel="stylesheet" href="/_astro/_slug_.CUGYf6hO.css"></head> <body>  <div class="kv-bg" id="kv-bg" style="--kv-dim: 0.8" aria-hidden="true"></div> <header class="header"> <nav class="nav" id="nav"> <a href="/" class="nav__logo"> <img src="/assets/2026/logo-side-white.svg" alt="RASHINBAN"> </a> <button class="nav__toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false"> <span></span> <span></span> <span></span> </button>  <div class="nav__drawer"> <ul class="nav__links"> <li><a href="/#about" class="nav__link">ABOUT</a></li> <li><a href="/#news" class="nav__link">NEWS</a></li> <li><a href="/#broadcast" class="nav__link">BROADCAST</a></li> <li><a href="/#tournament" class="nav__link">TOURNAMENT</a></li> <li><a href="/#join-us" class="nav__link">JOIN US</a></li> <li><a href="/#faq" class="nav__link">FAQ</a></li> </ul> <div class="nav__drawer-footer"> <ul class="nav__socials"> <li><a href="https://x.com/rashinban_geo" target="_blank" rel="noreferrer" aria-label="X"><i class="bi bi-twitter"></i></a></li> <li><a href="https://twitch.tv/sp4geo" target="_blank" rel="noreferrer" aria-label="Twitch"><i class="bi bi-twitch"></i></a></li> <li><a href="https://youtube.com/@sp4geo" target="_blank" rel="noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a></li> <li><a href="https://discord.gg/vWuH9Q3pKM" target="_blank" rel="noreferrer" aria-label="Discord"><i class="bi bi-discord"></i></a></li> </ul> <p class="nav__copyright">© 2026 RASHINBAN Tournament. All rights reserved.</p> </div> </div> </nav> <script type="module">const t=document.getElementById("nav"),n=document.getElementById("nav-toggle");n?.addEventListener("click",()=>{const e=t?.classList.toggle("is-open");n.setAttribute("aria-expanded",String(!!e))});const s=()=>{t?.classList.remove("is-open"),n?.setAttribute("aria-expanded","false")};t?.querySelectorAll(".nav__link").forEach(e=>{e.addEventListener("click",s)});document.addEventListener("click",e=>{t?.classList.contains("is-open")&&!t.contains(e.target)&&s()});document.addEventListener("keydown",e=>{e.key==="Escape"&&s()});</script> </header> <main class="main">  <div class="page-bg"> <div class="article-page guide-page"> <div class="container"> <div class="article-page__head"> <h1 class="article-page__news">PRIVACY POLICY</h1> <a class="btn-pill" href="/">Back to Top Page</a> </div> <div class="md-page-body"><h2>プライバシーポリシー</h2>
+<p>「RASHINBAN 2026」(以下「本大会」といいます)の主催者(以下「主催者」といいます)は、本大会のエントリー、チケット購入、観戦および運営に関連して取得する個人情報について、以下のとおりプライバシーポリシー(以下「本ポリシー」といいます)を定めます。 </p>
+<h3>第1条(事業者情報)</h3>
+<p>主催者名:一般社団法人日本ジオスポーツ協会<br>連絡先:<a href="mailto:japangeosportsassociation@gmail.com">japangeosportsassociation@gmail.com</a></p>
+<h3>第2条(取得する個人情報)</h3>
+<p>主催者は、本大会の運営にあたり、以下の情報を取得することがあります。</p>
+<ol>
+<li>氏名(本名・ハンドルネーム)</li>
+<li>メールアドレス</li>
+<li>電話番号</li>
+<li>生年月日・年齢</li>
+<li>SNSアカウント情報(GeoGuessrアカウント等の大会関連アカウントを含む)</li>
+<li>チケット購入・決済に関する情報</li>
+<li>大会当日の写真・映像(配信・記録用)</li>
+<li>お問い合わせ内容</li>
+<li>その他、エントリーフォームにご入力いただいた情報</li>
+</ol>
+<h3>第3条(利用目的)</h3>
+<p>主催者は、取得した個人情報を以下の目的で利用します。</p>
+<ol>
+<li>本大会のエントリー受付および出場資格の確認</li>
+<li>チケット販売および入場管理</li>
+<li>大会運営に関する連絡(日程変更、注意事項の案内等)</li>
+<li>大会結果・ランキングの公表</li>
+<li>大会の様子を撮影した写真・映像のSNS・配信・広報物への使用</li>
+<li>お問い合わせへの対応</li>
+<li>今後の大会運営の改善および統計データの作成(個人を特定しない形式に限る)</li>
+</ol>
+<h3>第4条(第三者提供)</h3>
+<p>主催者は、以下の各号のいずれかに該当する場合を除き、あらかじめ本人の同意を得ることなく個人情報を第三者に提供しません。</p>
+<ol>
+<li>法令に基づく場合</li>
+<li>人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+<li>チケット販売・決済処理を委託する事業者に対し、業務の遂行に必要な範囲で提供する場合</li>
+</ol>
+<h3>第5条(個人情報の安全管理)</h3>
+<p>主催者は、取得した個人情報の漏えい、滅失または毀損を防止するため、必要かつ適切な安全管理措置を講じます。</p>
+<h3>第6条(写真・映像の取り扱い)</h3>
+<p>本大会の会場および配信において、参加者・観戦者の様子を撮影することがあります。撮影された写真・映像は、大会公式SNS、配信アーカイブおよび広報物等に使用される場合があります。特定の個人を強調する形での使用を望まない場合は、事前に主催者までご連絡ください。</p>
+<h3>第7条(未成年者の参加)</h3>
+<p>未成年の方が本大会にエントリーする場合は、保護者の同意を得たうえでお申し込みください。</p>
+<h3>第8条(個人情報の開示・訂正・削除等)</h3>
+<p>本人からの個人情報の開示、訂正、利用停止、削除等の請求については、第11条に定める窓口において、本人確認のうえ対応します。</p>
+<h3>第9条(Cookie等の利用・アクセス解析)</h3>
+<p>本大会の公式サイトおよびエントリー・チケット購入フォームでは、利便性の向上や利用状況の分析を目的として、Cookie等の技術を使用することがあります。</p>
+<p>本大会の公式サイトでは、アクセス状況を把握するためにGoogle社が提供するアクセス解析ツール「Google アナリティクス」を使用しています。Google アナリティクスはCookieを利用して、個人を特定しない形で訪問者の利用状況(アクセス数、参照元、ページの閲覧状況等)を収集します。収集されたデータはGoogle社のプライバシーポリシーに基づいて管理されます。Cookieの利用を望まない場合は、ブラウザの設定で無効にすることができます。Google アナリティクスの利用規約およびプライバシーポリシーについては、以下をご参照ください。</p>
+<ul>
+<li>Google アナリティクス利用規約: <a href="https://marketingplatform.google.com/about/analytics/terms/jp/">https://marketingplatform.google.com/about/analytics/terms/jp/</a></li>
+<li>Googleプライバシーポリシー: <a href="https://policies.google.com/privacy?hl=ja">https://policies.google.com/privacy?hl=ja</a></li>
+<li>Google アナリティクス オプトアウト アドオン: <a href="https://tools.google.com/dlpage/gaoptout?hl=ja">https://tools.google.com/dlpage/gaoptout?hl=ja</a></li>
+</ul>
+<h3>第10条(本ポリシーの変更)</h3>
+<p>主催者は、必要に応じて本ポリシーの内容を変更することがあります。変更後の内容は、本大会公式サイトに掲載した時点から効力を生じるものとします。</p>
+<h3>第11条(お問い合わせ窓口)</h3>
+<p>本ポリシーに関するお問い合わせは、以下の窓口までご連絡ください。<br>主催者名: 一般社団法人日本ジオスポーツ協会<br>連絡先: <a href="mailto:japangeosportsassociation@gmail.com">japangeosportsassociation@gmail.com</a></p>
+<p>附則<br>本ポリシーは、2026年7月1日から施行します。</p>
+</div> <p class="article-page__back"> <a class="btn-pill" href="#">Back to Top</a> </p> </div> </div> </div>  </main> <footer class="footer"> <div class="footer__container"> <div class="footer__content"> <img class="footer__logo" src="/assets/images/logo-side.svg" alt="RASHINBAN"> <div class="footer__contact"> <p class="contact-description">
+大会に関するご質問やご相談、パートナーシップのご提案は、下記よりお気軽にご連絡ください。<br>
+プレイヤー登録やイベント詳細について、運営チームがサポートします。
+</p> <div class="separator"></div> <p class="contact-description"> <strong>E-Mail:</strong> <a href="mailto:rashinban.geo@gmail.com">rashinban.geo@gmail.com</a> </p> </div> <div class="footer__social"> <ul> <li><a href="https://x.com/rashinban_geo" target="_blank" rel="noreferrer" aria-label="X"><i class="bi bi-twitter"></i></a></li> <li><a href="https://twitch.tv/sp4geo" target="_blank" rel="noreferrer" aria-label="Twitch"><i class="bi bi-twitch"></i></a></li> <li><a href="https://youtube.com/@sp4geo" target="_blank" rel="noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a></li> <li><a href="https://discord.gg/vWuH9Q3pKM" aria-label="Discord"><i class="bi bi-discord"></i></a></li> </ul> </div> </div> <div class="footer__bottom"> <p><a href="/privacy-policy/">Privacy Policy</a> &copy; 2026 RASHINBAN Tournament. All rights reserved.</p> </div> <div class="footer__bottom-logo"> <img src="/assets/images/compass-footer.svg" alt=""> </div> </div> </footer> </body></html>
